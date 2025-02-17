@@ -5,8 +5,10 @@ const optionsContent = document.querySelector(".options-content");
 const validButton = document.querySelector("#valid-button");
 const nextButton = document.querySelector("#next-button");
 const modal = document.querySelector(".modal-check");
-const questionIndex = 0;
+let questionIndex = 0;
 const displayQuestion = () => {
+    optionsContent.innerHTML = "";
+    currentQuestion.innerHTML = "";
     currentQuestion.innerText = quiz.quiz_1[questionIndex].text;
     quiz.quiz_1[questionIndex].options.forEach((option, i) => {
         optionsContent.insertAdjacentHTML("beforeend", `<label for="option-${i+1}">
@@ -25,6 +27,7 @@ const checkAnswer = (answerGiven) => {
 }
 
 const gameplay = () => {
+    displayQuestion()
     validButton.addEventListener("click", () => {
         const answerGiven = document.querySelector('input:checked').value;
         modal.style.display = "flex";
@@ -35,7 +38,11 @@ const gameplay = () => {
         }  
         document.querySelector(".modal-check p").innerText = quiz.quiz_1[questionIndex].know_more
     })
+    nextButton.addEventListener("click", () => {
+        modal.style.display = "none";
+        questionIndex++;
+        gameplay();
+    })
 }
 
-displayQuestion();
 gameplay();
