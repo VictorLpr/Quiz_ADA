@@ -2,6 +2,7 @@ import { quiz } from "./questions.js";
 
 const quizContent = document.querySelector(".quiz");
 const currentQuestion = document.querySelector(".quiz .question p");
+const logo = document.querySelector(".logo img");
 const optionsContent = document.querySelector(".options-content");
 const validButton = document.querySelector("#valid-button");
 const nextButton = document.querySelector("#next-button");
@@ -18,6 +19,7 @@ const themeButtons = document.querySelectorAll('.subject-list button');
 const subjectContent = document.querySelector(".subject");
 const startButton = document.querySelector("#start");
 let pickedQuestion;
+let pickedURL;
 
 
 
@@ -41,6 +43,7 @@ const themeChoice = () => {
 const displayQuestion = () => {
     optionsContent.innerHTML = "";
     currentQuestion.innerHTML = "";
+    logo.src = pickedURL;
     currentQuestion.innerText = pickedQuestion.text;
     pickedQuestion.options.forEach((option, i) => {
         console.log(option)
@@ -74,6 +77,7 @@ const pickQuestion = () => {
     const quizIndex = Math.floor(Math.random() * subjectChoices.length);
     const questionIndex = Math.floor(Math.random() * quiz[subjectChoices[quizIndex]].questions.length)
     pickedQuestion = quiz[subjectChoices[quizIndex]].questions[questionIndex];
+    pickedURL = quiz[subjectChoices[quizIndex]].url_logo;
     console.log(pickedQuestion);
     if (pickedQuestion.done == true) {
         pickQuestion();
