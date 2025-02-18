@@ -12,6 +12,29 @@ const resetButton = document.querySelector(".result #reset");
 const modal = document.querySelector(".modal-check");
 let questionIndex = 0;
 let score = 0;
+let subjectChoices = [];
+const themeButtons = document.querySelectorAll('.subject-list button');
+const startButton = document.querySelector("#start");
+
+
+
+const themeChoice = () => {
+    themeButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if (button.hasAttribute('selected') == false) {
+                button.setAttribute('selected', '');
+                subjectChoices.push(button.dataset.value);
+                console.log('et les sélectionnés sont : ' + subjectChoices)
+            } else {
+                button.removeAttribute('selected');
+                subjectChoices.splice(subjectChoices.indexOf(button.dataset.value),1);
+                console.log('hello ' + subjectChoices)
+            }
+        })
+    })
+    return subjectChoices;
+}
+
 const displayQuestion = () => {
     optionsContent.innerHTML = "";
     currentQuestion.innerHTML = "";
@@ -45,6 +68,8 @@ const displayResult = () => {
 }
 
 const gameplay = () => {
+    themeChoice()
+
     displayQuestion()
     validButton.addEventListener("click", () => {
         const answerGiven = document.querySelector('input:checked').value;
