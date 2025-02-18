@@ -122,17 +122,17 @@ export const quiz = {
             text: "Quel est le nom de la montagne où Frodon et Sam doivent détruire l'Anneau ?",
             options: [
                 "Montagne du Destin",
-                "Mont Doom",
+                "Moria",
                 "Montagne d'Acier",
                 "Mordor"
             ],
-            correct_answer: "Mont Doom",
-            know_more: "Le Mont Doom (Montagne du Destin) est situé dans la région du Mordor, où Frodon et Sam doivent détruire l'Anneau Unique pour sauver la Terre du Milieu.",
-            difficulty: 4
+            correct_answer: "Montagne du Destin",
+            know_more: "La Montagne du Destin est situé dans la région du Mordor, où Frodon et Sam doivent détruire l'Anneau Unique pour sauver la Terre du Milieu.",
+            difficulty: 2
         },
         {
             done: false,
-            text: "Dans quelle région se trouvent les Mins Tirith et Osgiliath ?",
+            text: "Dans quelle région se trouvent les villes Minas Tirith et Osgiliath ?",
             options: [
                 "Rohan",
                 "Gondor",
@@ -155,19 +155,6 @@ export const quiz = {
             correct_answer: "Thranduil",
             know_more: "Thranduil est le roi des Elfes de la Forêt Noire, le père de Legolas, et un allié important des Peuples Libres lors de la guerre contre Sauron.",
             difficulty: 2
-        },
-        {
-            done: false,
-            text: "Quel est le nom du roi des Morts que Aragorn rencontre dans 'Le Retour du Roi' ?",
-            options: [
-                "Le Roi-Sorcier d'Angmar",
-                "Le Roi des Morts",
-                "Ar-Pharazôn",
-                "Eärendil"
-            ],
-            correct_answer: "Le Roi des Morts",
-            know_more: "Le Roi des Morts est le souverain d’une armée maudite, contrainte de servir le roi d’Aragorn pour l'aider à vaincre Sauron et ses armées.",
-            difficulty: 5
         },
         {
             done: false,
