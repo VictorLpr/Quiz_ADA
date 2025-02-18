@@ -6,47 +6,28 @@ body {
     box-sizing: border-box;
 }
 
-.options-content{
+p, h1, h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.edwige {
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
-}
-input {
-    display: none;
-}
-.options-content>label {
-    background-color: aqua;
-    display: grid;
-    width: 600px;
-    max-width: 90%;
-    height: 40px;
-    aspect-ratio: 1/1;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 0 0 20px;
-    padding: 10px 20px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
-    transition: .3s ease-in-out;
-}
-.options-content>label:hover {
- background-color: lightblue;
- transform: translateY(-3px);
-}
-.options-content>label:has(input:checked) {
-    background-color: hotpink;
-}
-.result {
-    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
     margin-bottom: 30px;
 }
-.question p {
-    text-align: center;
-}
 
 .content {
     position: relative;
+    width: 90%;
+    height: 70%;
+    min-height: 500px;
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(3.5px);
@@ -57,9 +38,112 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    padding: 50px 0;
+    @media screen and (min-width: 768px) {
+        width: 60%;
+    }
 }
+
+/* /////////////////////////////////////////////////////////////////////// */
+
+.subject {
+
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+
+.quiz {
+    width: 100%;
+    height: 100%;
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.question p {
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.options-content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.options-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.options-content>label {
+    background-color: aqua;
+    display: grid;
+    width: 600px;
+    max-width: 80%;
+    height: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 0 20px;
+    padding: 10px 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+    transition: .3s ease-in-out;
+}
+
+.options-content>label:hover {
+ background-color: lightblue;
+ transform: translateY(-3px);
+}
+
+.options-content>label:has(input:checked) {
+    background-color: hotpink;
+}
+
+input {
+    display: none;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+/* //////////////////////////////////////////////////////////////////// */
+
+.result {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.result>p:first-child {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#score {
+    font-weight: 900;
+    font-size: 32px;
+}
+
+#resultComment {
+
+}
+
+/* //////////////////////////////////////////////////////////////////////// */
 
 .modal-check {
     position: absolute;
@@ -75,27 +159,4 @@ input {
     transform: translate(-50%, -50%);
     background-color: hsla(0, 0%, 100%);
 
-}
-
-
-.options-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.edwige {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-button {
-    display: block;
-    margin: 0 auto;
-    cursor: pointer;
 }
