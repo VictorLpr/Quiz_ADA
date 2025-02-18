@@ -175,6 +175,66 @@ export const quiz = {
             options: ["Avada Kedavra", "Harry Potter !", "Tu ne peux pas me battre !", "C'est impossible !"],
             correct_answer: "Avada Kedavra",
             know_more: "Dans *Les Reliques de la Mort*, la dernière action de Voldemort est de lancer un 'Avada Kedavra' sur Harry, mais le sort se retourne contre lui à cause de la baguette de Sureau, entraînant sa mort définitive."
+        },
+        {
+            text: "Quel nom porte la chouette de Harry Potter ?",
+            options: ["Patenrond", "Coquecigrue", "Hedwige", "Hermione"],
+            correct_answer: "Hedwige",
+            know_more: "Hedwige est la chouette Harfang blanche de Harry Potter. Elle lui a été offerte par Rubeus Hagrid pour son onzième anniversaire. Harry l'a baptisée d'après un nom trouvé dans son livre d'histoire de la magie."
+        },
+        {
+            text: "De quoi est composé le coeur de la baguette de Harry Potter ?",
+            options: ["Plume de Phoenix", "Tige de dictame", "Corne de serpent cornu", "Crin de licorne"],
+            correct_answer: "Plume de Phoenix",
+            know_more: "La baguette de Harry Potter est en houx, avec une plume de phénix à l'intérieur et mesure 27,5 centimètres. Elle est très souple et facile à manier."
+        },
+        {
+            text: "Quel est le nom du rat de Ron ?",
+            options: ["Crockdur", "Trevor", "Norbert", "Croutard"],
+            correct_answer: "Croutard",
+            know_more: "Croûtard est le rat de Ron Weasley. Il apparait pour la première fois dans Harry Potter à l'école des sorciers. Appartenant autrefois à son grand frère Percy, c'est un rat anormalement vieux pour son espèce qui ne vit généralement pas plus de trois ans."
+        },
+        {
+            text: "Quels sont les prénoms de Dumbledore ?",
+            options: ["Albus Percival Wulfric Brian", "Albus Wilfried Percival Brian", "Albus Wulfric Percival Brian", "Albus Tom Elvis Jedusor"],
+            correct_answer: "Albus Percival Wulfric Brian",
+            know_more: "Dumbledore a 4 prénoms : Albus Percival Wulfric Brian. Pas facile pour remplir les papiers administratifs !"
+        },
+        {
+            text: "Lequel n'est pas un fantôme/esprit de Poudlard ?",
+            options: ["Professeur Binns", "Le Baron Sanglant", "Peeves", "Kasper le terrible"],
+            correct_answer: "Kasper le terrible",
+            know_more: "Kasper le terrible n'est pas un personnage du monde de Harry Potter."
+        },
+        {
+            text: "Quelle est la longueur de la baguette magique d'Hermione ?",
+            options: ["17,1 cm", "22,7 cm", "23,7 cm", "27,3 cm"],
+            correct_answer: "27,3 cm",
+            know_more: "La baguette d'Hermione est en vigne, avec du ventricule de dragon à l'intérieur et mesure 27,3 centimètres."
+        },
+        {
+            text: "Combien d'enfant ont Arthur et Molly Weasley ?",
+            options: ["5", "6", "7", "8"],
+            correct_answer: "7",
+            know_more: "Arthur et Molly Weasley ont 7 enfants : Ginny, Ron, George, Fred, Percy, Charlie et Bill."
+        },
+        {
+            text: "Qui est nommé professeur de défense contre les forces du mal pour la 4ème année de Harry Potter (Harry Potter de la Coupe de Feu) ?",
+            options: ["Remus Lupin", "Alastor Maugrey", "Gilderoy Lockhart", "Horace Slughorn"],
+            correct_answer: "Alastor Maugrey",
+            know_more: "Alastor Maugrey aussi surnommé Fol Œil est nommé professeur de défense contre les forces du mal par Dumbledore, cependant c'est Barty Croupton Jr qui le remplace pendant toutes l'année scolaire en usurpant son identité grâce à du polynectar."
+        },
+        {
+            text: "Lequel n'est pas un sortilège impardonnable ?",
+            options: ["Avada Kedavra", "Endoloris", "Expecto patronum", "Impero"],
+            correct_answer: "Expecto patronum",
+            know_more: "Expecto patronum est un sort permettant de faire apparaître un Patronus. Avada Kedavra provoque la mort instantanée, Endoloris inflige une douleur atroce et Impero permet de prendre le contrôle du corps de la cible."
+        },
+        {
+            text: "",
+            options: ["", "", "", ""],
+            correct_answer: "",
+            know_more: ""
         }
     ]
 }
