@@ -10,11 +10,14 @@ const scoreContent = document.querySelector(".result #score");
 const resultComment = document.querySelector(".result #resultComment");
 const resetButton = document.querySelector(".result #reset");
 const modal = document.querySelector(".modal-check");
-let questionIndex = 0;
+const turn = 10;
+let questionCount = turn;
 let score = 0;
 let subjectChoices = [];
 const themeButtons = document.querySelectorAll('.subject-list button');
+const subjectContent = document.querySelector(".subject");
 const startButton = document.querySelector("#start");
+let pickedQuestion;
 
 
 
@@ -38,8 +41,8 @@ const themeChoice = () => {
 const displayQuestion = () => {
     optionsContent.innerHTML = "";
     currentQuestion.innerHTML = "";
-    currentQuestion.innerText = quiz.quiz_1[questionIndex].text;
-    quiz.quiz_1[questionIndex].options.forEach((option, i) => {
+    currentQuestion.innerText = pickedQuestion.text;
+    pickedQuestion.options.forEach((option, i) => {
         console.log(option)
         optionsContent.insertAdjacentHTML("beforeend", `<label for="option-${i+1}">
                         <input name="options" type="radio" class="options" id="option-${i+1}" value="${option}" />
@@ -49,7 +52,7 @@ const displayQuestion = () => {
 }
 
 const checkAnswer = (answerGiven) => {
-    if (answerGiven === quiz.quiz_1[questionIndex].correct_answer) {
+    if (answerGiven === pickedQuestion.correct_answer) {
         console.log("gagné")
         return true;
     }
@@ -59,18 +62,35 @@ const checkAnswer = (answerGiven) => {
 const displayResult = () => {
     quizContent.style.display = "none";
     result.style.display = "flex";
-    scoreContent.innerText = `${score}/${quiz.quiz_1.length}`;
-    if (score < (quiz.quiz_1.length / 2)) {
+    scoreContent.innerText = `${score}/${turn}`;
+    if (score < turn / 2) {
         resultComment.innerText = "nul(lllll) !!!";
     } else {
         resultComment.innerText = "Champion !";
     }
 }
 
-const gameplay = () => {
-    themeChoice()
+const pickQuestion = () => {
+    const quizIndex = Math.floor(Math.random() * subjectChoices.length);
+    const questionIndex = Math.floor(Math.random() * quiz[subjectChoices[quizIndex]].questions.length)
+    pickedQuestion = quiz[subjectChoices[quizIndex]].questions[questionIndex];
+    console.log(pickedQuestion);
+    if (pickedQuestion.done == true) {
+        pickQuestion();
+    } else {
+        pickedQuestion.done = true;
+        return pickedQuestion;
+    }
+}
 
-    displayQuestion()
+const gameplay = () => {
+    themeChoice();
+    startButton.addEventListener("click", () => {
+        pickQuestion();
+        subjectContent.style.display = "none";
+        quizContent.style.display = "flex";
+        displayQuestion();
+    })
     validButton.addEventListener("click", () => {
         const answerGiven = document.querySelector('input:checked').value;
         modal.style.display = "flex";
@@ -78,26 +98,28 @@ const gameplay = () => {
             document.querySelector(".modal-check h2").innerText = "Bravo";
             score++;
         } else {
-            document.querySelector(".modal-check h2").innerHTML = `Nul(l) </br></br> <span> la réponse était : ${quiz.quiz_1[questionIndex].correct_answer}</span>`;
+            document.querySelector(".modal-check h2").innerHTML = `Nul(l) </br></br> <span> la réponse était : ${pickedQuestion.correct_answer}</span>`;
         }  
-        document.querySelector(".modal-check p").innerText = quiz.quiz_1[questionIndex].know_more
+        document.querySelector(".modal-check p").innerText = pickedQuestion.know_more
     })
     nextButton.addEventListener("click", () => {
         modal.style.display = "none";
-        if (questionIndex === (quiz.quiz_1.length - 1)) {
+        if (questionCount === 0) {
             displayResult();
         }
-        questionIndex++;
+        questionCount--;
+        pickQuestion();
         displayQuestion();
     })
 
-    resetButton.addEventListener('click', () => {
-        questionIndex = 0;
-        score = 0;
-        quizContent.style.display = "flex";
-        result.style.display = "none";
-        displayQuestion();
-    })
 }
 
 gameplay();
+
+resetButton.addEventListener('click', () => {
+    questionIndex = 0;
+    score = 0;
+    quizContent.style.display = "flex";
+    result.style.display = "none";
+    gameplay();
+})
