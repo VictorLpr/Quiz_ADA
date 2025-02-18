@@ -11,6 +11,7 @@ const displayQuestion = () => {
     currentQuestion.innerHTML = "";
     currentQuestion.innerText = quiz.quiz_1[questionIndex].text;
     quiz.quiz_1[questionIndex].options.forEach((option, i) => {
+        console.log(option)
         optionsContent.insertAdjacentHTML("beforeend", `<label for="option-${i+1}">
                         <input name="options" type="radio" class="options" id="option-${i+1}" value="${option}" />
                         <p>${option}</p>
@@ -41,7 +42,7 @@ const gameplay = () => {
     nextButton.addEventListener("click", () => {
         modal.style.display = "none";
         questionIndex++;
-        gameplay();
+        displayQuestion();
     })
 }
 
