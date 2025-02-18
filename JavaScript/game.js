@@ -1,11 +1,16 @@
 import { quiz } from "./questions.js";
 
+const quizContent = document.querySelector(".quiz");
 const currentQuestion = document.querySelector(".quiz .question p");
 const optionsContent = document.querySelector(".options-content");
 const validButton = document.querySelector("#valid-button");
 const nextButton = document.querySelector("#next-button");
+const result = document.querySelector(".result");
+const scoreContent = document.querySelector(".result #score");
+const resultComment = document.querySelector(".result #resultComment");
 const modal = document.querySelector(".modal-check");
 let questionIndex = 0;
+let score = 0;
 const displayQuestion = () => {
     optionsContent.innerHTML = "";
     currentQuestion.innerHTML = "";
@@ -27,6 +32,17 @@ const checkAnswer = (answerGiven) => {
     return false;
 }
 
+const displayResult = () => {
+    quizContent.style.display = "none";
+    result.style.display = "flex";
+    scoreContent.innerText = `${score}/${quiz.quiz_1.length}`;
+    if (score < (quiz.quiz_1.length / 2)) {
+        resultComment.innerText = "nul(lllll) !!!";
+    } else {
+        resultComment.innerText = "Champion !";
+    }
+}
+
 const gameplay = () => {
     displayQuestion()
     validButton.addEventListener("click", () => {
@@ -34,6 +50,7 @@ const gameplay = () => {
         modal.style.display = "flex";
         if (checkAnswer(answerGiven) == true) {
             document.querySelector(".modal-check h2").innerText = "Bravo";
+            score++;
         } else {
             document.querySelector(".modal-check h2").innerHTML = `Nul(l) </br></br> <span> la réponse était : ${quiz.quiz_1[questionIndex].correct_answer}</span>`;
         }  
@@ -41,6 +58,9 @@ const gameplay = () => {
     })
     nextButton.addEventListener("click", () => {
         modal.style.display = "none";
+        if (questionIndex === (quiz.quiz_1.length - 1)) {
+            displayResult();
+        }
         questionIndex++;
         displayQuestion();
     })
