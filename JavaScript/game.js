@@ -8,6 +8,7 @@ const nextButton = document.querySelector("#next-button");
 const result = document.querySelector(".result");
 const scoreContent = document.querySelector(".result #score");
 const resultComment = document.querySelector(".result #resultComment");
+const resetButton = document.querySelector(".result #reset");
 const modal = document.querySelector(".modal-check");
 let questionIndex = 0;
 let score = 0;
@@ -62,6 +63,14 @@ const gameplay = () => {
             displayResult();
         }
         questionIndex++;
+        displayQuestion();
+    })
+
+    resetButton.addEventListener('click', () => {
+        questionIndex = 0;
+        score = 0;
+        quizContent.style.display = "flex";
+        result.style.display = "none";
         displayQuestion();
     })
 }
