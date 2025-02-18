@@ -1,7 +1,7 @@
 export const quiz = {
     quiz_1: {
         name: "Le seigneur des anneaux",
-        ulrLogo: "",
+        url_logo: "./assets/images/logo_le_seigneur_des_anneaux.png",
         questions: [
             {
                 done: false,
@@ -189,7 +189,7 @@ export const quiz = {
     },
     quiz_2: {
         name: "Pokémon",
-        ulrLogo: "",
+        url_logo: "./assets/images/logo_pokemon.png",
         questions: [
             {
                 done: false,
@@ -325,7 +325,7 @@ export const quiz = {
     },
     quiz_3: {
         name: "Harry Potter",
-        ulrLogo: "",
+        url_logo: "./assets/images/logo_harry_potter.png",
         questions: [   
             {
                 done: false,
