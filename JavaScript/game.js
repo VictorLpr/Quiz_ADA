@@ -11,7 +11,7 @@ const scoreContent = document.querySelector(".result #score");
 const resultComment = document.querySelector(".result #resultComment");
 const resetButton = document.querySelector(".result #reset");
 const modal = document.querySelector(".modal-check");
-const turn = 10;
+const turn = 4;
 let questionCount = turn;
 let score = 0;
 let subjectChoices = [];
@@ -21,24 +21,27 @@ const startButton = document.querySelector("#start");
 let pickedQuestion;
 let pickedQuiz;
 
-
-
+const selectTheme = (btn) => {
+    if (btn.hasAttribute('selected') == false) {
+        btn.setAttribute('selected', '');
+        subjectChoices.push(btn.dataset.value);
+        console.log('et les sélectionnés sont : ' + subjectChoices)
+    } else {
+        btn.removeAttribute('selected');
+        subjectChoices.splice(subjectChoices.indexOf(btn.dataset.value), 1);
+        console.log('hello ' + subjectChoices)
+    }
+}
 const themeChoice = () => {
     themeButtons.forEach((button) => {
         button.addEventListener('click', () => {
-            if (button.hasAttribute('selected') == false) {
-                button.setAttribute('selected', '');
-                subjectChoices.push(button.dataset.value);
-                console.log('et les sélectionnés sont : ' + subjectChoices)
-            } else {
-                button.removeAttribute('selected');
-                subjectChoices.splice(subjectChoices.indexOf(button.dataset.value),1);
-                console.log('hello ' + subjectChoices)
-            }
+            selectTheme(button);
         })
     })
     return subjectChoices;
 }
+
+
 
 const displayQuestion = () => {
     optionsContent.innerHTML = "";
@@ -47,10 +50,10 @@ const displayQuestion = () => {
     currentQuestion.innerText = pickedQuestion.text;
     pickedQuestion.options.forEach((option, i) => {
         console.log(option)
-        optionsContent.insertAdjacentHTML("beforeend", `<label for="option-${i+1}">
-                        <input name="options" type="radio" class="options" id="option-${i+1}" value="${option}" />
+        optionsContent.insertAdjacentHTML("beforeend", `<label for="option-${i + 1}">
+                        <input name="options" type="radio" class="options" id="option-${i + 1}" value="${option}" />
                         <p>${option}</p>
-                    </label>`) 
+                    </label>`)
     })
 }
 
@@ -87,43 +90,46 @@ const pickQuestion = () => {
     }
 }
 
-const gameplay = () => {
-    themeChoice();
-    startButton.addEventListener("click", () => {
-        pickQuestion();
-        subjectContent.style.display = "none";
-        quizContent.style.display = "flex";
-        displayQuestion();
-    })
-    validButton.addEventListener("click", () => {
-        const answerGiven = document.querySelector('input:checked').value;
-        modal.style.display = "flex";
-        if (checkAnswer(answerGiven) == true) {
-            document.querySelector(".modal-check h2").innerText = "Bravo";
-            score++;
-        } else {
-            document.querySelector(".modal-check h2").innerHTML = `Nul(l) </br></br> <span> la réponse était : ${pickedQuestion.correct_answer}</span>`;
-        }  
-        document.querySelector(".modal-check p").innerText = pickedQuestion.know_more
-    })
-    nextButton.addEventListener("click", () => {
-        modal.style.display = "none";
-        if (questionCount === 0) {
-            displayResult();
-        }
-        questionCount--;
-        pickQuestion();
-        displayQuestion();
-    })
-
+const displayKnowmore = () => {
+    const answerGiven = document.querySelector('input:checked').value;
+    modal.style.display = "flex";
+    if (checkAnswer(answerGiven) == true) {
+        document.querySelector(".modal-check h2").innerText = "Bravo";
+        score++;
+    } else {
+        document.querySelector(".modal-check h2").innerHTML = `Nul(l) </br></br> <span> la réponse était : ${pickedQuestion.correct_answer}</span>`;
+    }
+    document.querySelector(".modal-check p").innerText = pickedQuestion.know_more
 }
+startButton.addEventListener("click", () => {
+    pickQuestion();
+    subjectContent.style.display = "none";
+    quizContent.style.display = "flex";
+    displayQuestion();
+})
+validButton.addEventListener("click", () => {
+    displayKnowmore();
+})
+nextButton.addEventListener("click", () => {
+    modal.style.display = "none";
+    if (questionCount === 1) {
+        displayResult();
+    }
+    questionCount--;
+    pickQuestion();
+    displayQuestion();
+})
 
-gameplay();
+themeChoice();
 
 resetButton.addEventListener('click', () => {
-    questionIndex = 0;
+    questionCount = turn;
     score = 0;
-    quizContent.style.display = "flex";
+    subjectChoices = [];
+    themeButtons.forEach((button) => {
+
+        button.removeAttribute('selected');
+    })
+    subjectContent.style.display = "block";
     result.style.display = "none";
-    gameplay();
 })

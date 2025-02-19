@@ -182,3 +182,7 @@ button {
     background-color: hsla(0, 0%, 100%);
 
 }
+
+.logo img {
+    width: 150px;
+}
