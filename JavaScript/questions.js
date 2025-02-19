@@ -365,7 +365,7 @@ export const quiz = {
                 options: ["", "", "", ""],
                 correct_answer: "",
                 know_more: "",
-                difficulty: 
+                difficulty: 0
             }
         ]
     },
