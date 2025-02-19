@@ -41,8 +41,6 @@ const themeChoice = () => {
     return subjectChoices;
 }
 
-
-
 const displayQuestion = () => {
     optionsContent.innerHTML = "";
     currentQuestion.innerHTML = "";
@@ -101,7 +99,14 @@ const displayKnowmore = () => {
     }
     document.querySelector(".modal-check p").innerText = pickedQuestion.know_more
 }
+
+// Début du jeu
+// Choix du thème parmis des thèmes proposés
+themeChoice();
+
+// Lance le jeu en cliquant sur c'est parti
 startButton.addEventListener("click", () => {
+    // choisit la premier question
     pickQuestion();
     subjectContent.style.display = "none";
     quizContent.style.display = "flex";
@@ -119,8 +124,6 @@ nextButton.addEventListener("click", () => {
     pickQuestion();
     displayQuestion();
 })
-
-themeChoice();
 
 resetButton.addEventListener('click', () => {
     questionCount = turn;

@@ -369,7 +369,7 @@ export const quiz = {
             }
         ]
     },
-    quiz_3: {
+    quiz_4: {
         name: "Mythologie grecque",
         url_logo: "./assets/images/logo_mythologie_grecque.png",
         questions: [   
