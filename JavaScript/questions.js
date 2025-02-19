@@ -452,6 +452,86 @@ export const quiz = {
                 correct_answer: "Artémis",
                 know_more: "Artémis est la déesse de la chasse, des animaux sauvages, et de la nature. Elle est la sœur jumelle d'Apollon.",
                 difficulty: 1
+            },
+            {
+                done: false,
+                text: "Quel héros grec a tué le dragon qui gardait la Toison d'Or ?",
+                options: ["Jason", "Persée", "Thésée", "Héraclès"],
+                correct_answer: "Jason",
+                know_more: "Jason a mené l'expédition des Argonautes pour récupérer la Toison d'Or, et il a tué le dragon qui la gardait.",
+                difficulty: 3
+            },
+            {
+                done: false,
+                text: "Qui est la déesse de l'agriculture et des récoltes ?",
+                options: ["Déméter", "Hestia", "Héra", "Artémis"],
+                correct_answer: "Déméter",
+                know_more: "Déméter est la déesse de l'agriculture, des moissons et des récoltes. Elle est la mère de Perséphone.",
+                difficulty: 2
+            },
+            {
+                done: false,
+                text: "Quel titan a engendré les trois Cyclopes ?",
+                options: ["Uranus", "Cronos", "Gaïa", "Prométhée"],
+                correct_answer: "Gaïa",
+                know_more: "Gaïa, la Terre, est la mère des Cyclopes, ainsi que d'autres créatures mythologiques comme les Titans.",
+                difficulty: 4
+            },
+            {
+                done: false,
+                text: "Quel est le nom de l'épouse d'Hadès, déesse du royaume des morts ?",
+                options: ["Athéna", "Héra", "Déméter", "Perséphone"],
+                correct_answer: "Perséphone",
+                know_more: "Perséphone est la reine des Enfers, enlevée par Hadès. Elle passe une partie de l'année dans le royaume des morts.",
+                difficulty: 3
+            },
+            {
+                done: false,
+                text: "Qui est l'artisan et forgeron des dieux ?",
+                options: ["Apollon", "Hermès", "Hephaïstos", "Dionysos"],
+                correct_answer: "Hephaïstos",
+                know_more: "Hephaïstos est le dieu de la forge et des artisans. Il crée des objets et des armes pour les dieux.",
+                difficulty: 3
+            },
+            {
+                done: false,
+                text: "Quel héros grec a sauvé Andromède du monstre marin ?",
+                options: ["Persée", "Achille", "Thésée", "Hercule"],
+                correct_answer: "Persée",
+                know_more: "Persée a sauvé Andromède, qu'un monstre marin menaçait, avant de l'épouser.",
+                difficulty: 2
+            },
+            {
+                done: false,
+                text: "Quel dieu est associé à la musique, à la poésie et à la guérison ?",
+                options: ["Zeus", "Apollon", "Hermès", "Arès"],
+                correct_answer: "Apollon",
+                know_more: "Apollon est le dieu de la musique, de la poésie, de la guérison et des arts. Il est aussi le dieu du soleil.",
+                difficulty: 2
+            },
+            {
+                done: false,
+                text: "Qui est la déesse de la vengeance et de la justice ?",
+                options: ["Héra", "Thémis", "Athéna", "Artemis"],
+                correct_answer: "Thémis",
+                know_more: "Thémis est la déesse de la justice, de l'équité et de la vengeance divine. Elle est l'incarnation de la loi divine.",
+                difficulty: 4
+            },
+            {
+                done: false,
+                text: "Quel héros a été tué par son propre fils, Télémaque ?",
+                options: ["Achille", "Hercule", "Ulysse", "Pâris"],
+                correct_answer: "Ulysse",
+                know_more: "Ulysse, le héros de l'Odyssée, a été tué par son fils Télémaque lors de son retour à Ithaque.",
+                difficulty: 5
+            },
+            {
+                done: false,
+                text: "Quel est le nom de l'archer mythologique qui a tué Achille ?",
+                options: ["Pâris", "Hector", "Achille", "Paris"],
+                correct_answer: "Pâris",
+                know_more: "Pâris est le prince troyen qui, selon la mythologie, a tué Achille avec une flèche dirigée vers son talon.",
+                difficulty: 4
             }
             ]
         }
