@@ -59,6 +59,7 @@ const displayQuestion = () => {
                         <p>${option}</p>
                     </label>`)
     })
+    setTimeout(noAnswer, 5000);
 }
 
 const checkAnswer = (answerGiven) => {
@@ -93,6 +94,11 @@ const pickQuestion = () => {
         return pickedQuestion;
     }
 }
+const noAnswer = () => {
+    modal.style.display = "flex";
+    document.querySelector(".modal-check h2").innerHTML = `Trop tard...</br></br> <span> la réponse était : ${pickedQuestion.correct_answer}</span>`;
+    document.querySelector(".modal-check p").innerText = pickedQuestion.know_more;
+}
 
 const displayKnowmore = () => {
     const answerGiven = document.querySelector('input:checked').value;
@@ -103,7 +109,7 @@ const displayKnowmore = () => {
     } else {
         document.querySelector(".modal-check h2").innerHTML = `Nul(l) </br></br> <span> la réponse était : ${pickedQuestion.correct_answer}</span>`;
     }
-    document.querySelector(".modal-check p").innerText = pickedQuestion.know_more
+    document.querySelector(".modal-check p").innerText = pickedQuestion.know_more;
 }
 
 // Début du jeu
