@@ -11,6 +11,7 @@ const scoreContent = document.querySelector(".result #score");
 const resultComment = document.querySelector(".result #resultComment");
 const resetButton = document.querySelector(".result #reset");
 const modal = document.querySelector(".modal-check");
+const progressValue = document.querySelector(".progress-value");
 const turn = 4;
 let questionCount = turn;
 let score = 0;
@@ -41,9 +42,14 @@ const themeChoice = () => {
     return subjectChoices;
 }
 
+const updateProgress = () => {
+    progressValue.style.transform = `scaleX(${(turn - questionCount) / (turn)})`;
+}
+
 const displayQuestion = () => {
     optionsContent.innerHTML = "";
     currentQuestion.innerHTML = "";
+    updateProgress();
     logo.src = pickedQuiz.url_logo;
     currentQuestion.innerText = pickedQuestion.text;
     pickedQuestion.options.forEach((option, i) => {
@@ -127,6 +133,7 @@ nextButton.addEventListener("click", () => {
 
 resetButton.addEventListener('click', () => {
     questionCount = turn;
+    updateProgress();
     score = 0;
     subjectChoices = [];
     themeButtons.forEach((button) => {
