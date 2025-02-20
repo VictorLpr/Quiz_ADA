@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-/*   font-family: "Quicksand", serif; */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
 @font-face {
-    font-family: "NightMelody", serif;
-    src: url(./assets/Fonts/NightMelodyDemoRegular.ttf);
+    font-family: 'night-melody-demo.regular';
+    src: url('./assets/Fonts/night-melody-demo.regular.eot'); /* IE9 Compat Modes */
+    src: url('./assets/Fonts/night-melody-demo.regular.eot') format('embedded-opentype'), /* IE6-IE8 */
+         url('./assets/Fonts/night-melody-demo.regular.woff') format('woff'), /* Modern Browsers */
+         url('./assets/Fonts/night-melody-demo.regular.ttf')  format('truetype') /* Safari, Android, iOS */
 }
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+/* font-family: "Quicksand", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+/* font-family: "Cinzel", serif; */
 
+/*////////////////// GENERAL ////////////////*/
 body {
     background: -webkit-linear-gradient(to right, #ddd6f3, #faaca8);
     background: linear-gradient(to right, #445067, #0e7ac1);
@@ -15,15 +20,16 @@ body {
     font-family: "Quicksand", serif;
     font-weight: 500;
     color: #ddd6f3;
-
-
 }
 
 p, h1, h2 {
     width: 100%;
     text-align: center;
+    font-family: "Cinzel", serif;
 }
+/*////////////////// eo: GENERAL ////////////////*/
 
+/*////////////////// MAIN ////////////////*/
 .edwige {
     height: 100vh;
     display: flex;
@@ -34,8 +40,11 @@ p, h1, h2 {
 
 .title {
     margin-bottom: 30px;
-    font-family: "Cinzel", serif;
-    font-size: clamp(1rem, 4vw, 2rem) ;
+    font-size: clamp(1rem, 4vw, 2rem);
+}
+
+.title h1 {
+    font-family: 'night-melody-demo.regular';
 }
 
 .content {
@@ -58,8 +67,9 @@ p, h1, h2 {
         width: 60%;
     }
 }
+/*////////////////// eo: GENERAL ////////////////*/
 
-/* /////////////////////////////////////////////////////////////////////// */
+/*////////////////// SUBJECT ////////////////*/
 .subject {
     width: 100%;
 }
@@ -92,18 +102,15 @@ p, h1, h2 {
 .subject-list button:hover {
     transform: translateY(-3px);
     box-shadow: 2px 7px 15px 3px hsla(0, 0%, 0%, 0.13);
-
 }
 .subject-list button[selected] {
     transform: translateY(3px);
     box-shadow: 2px 0px 15px 3px hsla(0, 0%, 0%, 0.13) ;
-background-color: #44506767;
-    
-
+    background-color: #44506767;
 }
+/*////////////////// eo: SUBJECT ////////////////*/
 
-/* ////////////////////////////////////////////////////////////////////////// */
-
+/*////////////////// QUIZ ////////////////*/
 .quiz {
     width: 100%;
     height: 100%;
@@ -112,6 +119,21 @@ background-color: #44506767;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.logo {
+    width: 200px;
+    height: 50px;
+    @media screen and (min-width: 768px) {
+        height: 150px;
+    }
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
 }
 
 .question {
@@ -136,7 +158,6 @@ background-color: #44506767;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-
 }
 
 .options-content>label {
@@ -180,9 +201,11 @@ button {
     margin: 0 auto;
     cursor: pointer;
 }
+
 .valid {
     width: 100%;
 }
+
 #start, #valid-button {
     border-radius: 10px;
     font-size: 1.5rem;
@@ -193,11 +216,13 @@ button {
     width: 90%;
     max-width: 200px;
 }
+
 #valid-button:focus {
     background-color: red;
 }
-/* //////////////////////////////////////////////////////////////////// */
+/*////////////////// eo: QUIZ ////////////////*/
 
+/*////////////////// RESULT ////////////////*/
 .result {
     position: relative;
     width: 100%;
@@ -229,9 +254,9 @@ button {
     right: 20px;
     cursor: pointer;
 }
+/*////////////////// eo: RESULT ////////////////*/
 
-/* //////////////////////////////////////////////////////////////////////// */
-
+/*////////////////// MODAL ////////////////*/
 .modal-check {
     position: absolute;
     top: 50%;
@@ -245,21 +270,5 @@ button {
     height: 300px;
     transform: translate(-50%, -50%);
     background-color: hsla(0, 0%, 100%);
-
 }
-
-.logo {
-    width: 200px;
-    height: 50px;
-    @media screen and (min-width: 768px) {
-        height: 150px;
-        
-    }
-}
-
-.logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-}
+/*////////////////// eo: MODAL ////////////////*/
