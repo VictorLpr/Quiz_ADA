@@ -59,7 +59,7 @@ const displayQuestion = () => {
                         <p>${option}</p>
                     </label>`)
     })
-    setTimeout(noAnswer, 5000);
+    setTimeout(noAnswer, 15000);
 }
 
 const checkAnswer = (answerGiven) => {
