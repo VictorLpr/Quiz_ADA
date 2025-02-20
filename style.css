@@ -116,7 +116,7 @@ p, h1, h2 {
     height: 100%;
     /* display: flex; */
     display: none;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
@@ -202,11 +202,13 @@ button {
     cursor: pointer;
 }
 
-.valid {
+.valid, .next {
     width: 100%;
 }
 
-#start, #valid-button {
+#start,
+#valid-button,
+#next-button {
     border-radius: 10px;
     font-size: 1.5rem;
     border: none;
@@ -263,12 +265,32 @@ button {
     left: 50%;
     display: none;
     /* display: flex; */
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    width: 300px;
-    height: 300px;
+    width: calc(100% - 16px);
+    height: calc(100% - 20px);
+    border-radius: 10px;
+    padding: 10px 8px;
     transform: translate(-50%, -50%);
-    background-color: hsla(0, 0%, 100%);
+    background-color: rgb(13, 24, 100);
+}
+.modal-check h2 {
+    font-size: 4rem;
+    line-height: 2rem;
+    margin: 20px 0 0;
+}
+.modal-check h2 span {
+    font-size: 2rem;
+    line-height: 1.2rem;
+}
+
+.modal-check p {
+    font-size: 1.3rem;
+    @media screen and (min-width: 768px) {
+        max-width: 80%;
+        
+    }
+    
 }
 /*////////////////// eo: MODAL ////////////////*/
