@@ -125,6 +125,7 @@ nextButton.addEventListener("click", () => {
     modal.style.display = "none";
     if (questionCount === 1) {
         displayResult();
+        return;
     }
     questionCount--;
     pickQuestion();
