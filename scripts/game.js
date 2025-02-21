@@ -46,10 +46,13 @@ const updateProgress = () => {
     progressValue.style.transform = `scaleX(${(turn - questionCount) / (turn)})`;
 }
 
+let timeOut = () => {}
+
 const displayQuestion = () => {
     optionsContent.innerHTML = "";
     currentQuestion.innerHTML = "";
     updateProgress();
+    startCountdown();
     logo.src = pickedQuiz.url_logo;
     currentQuestion.innerText = pickedQuestion.text;
     pickedQuestion.options.forEach((option, i) => {
@@ -59,7 +62,7 @@ const displayQuestion = () => {
                         <p>${option}</p>
                     </label>`)
     })
-    setTimeout(noAnswer, 15000);
+    timeOut = setTimeout(noAnswer, 15000);
 }
 
 const checkAnswer = (answerGiven) => {
@@ -79,6 +82,7 @@ const displayResult = () => {
     } else {
         resultComment.innerText = "Champion !";
     }
+    progressValue.style.transform = `scaleX(1)`
 }
 
 const pickQuestion = () => {
@@ -98,10 +102,14 @@ const noAnswer = () => {
     modal.style.display = "flex";
     document.querySelector(".modal-check h2").innerHTML = `Trop tard...</br></br> <span> la réponse était : ${pickedQuestion.correct_answer}</span>`;
     document.querySelector(".modal-check p").innerText = pickedQuestion.know_more;
+    stopInterval();
 }
 
 const displayKnowmore = () => {
-    const answerGiven = document.querySelector('input:checked').value;
+    let answerGiven = "";
+    if (document.querySelector('input:checked')) {
+        answerGiven = document.querySelector('input:checked').value;
+    }
     modal.style.display = "flex";
     if (checkAnswer(answerGiven) == true) {
         document.querySelector(".modal-check h2").innerText = "Bravo";
@@ -110,6 +118,24 @@ const displayKnowmore = () => {
         document.querySelector(".modal-check h2").innerHTML = `Nul(l) </br></br> <span> la réponse était : ${pickedQuestion.correct_answer}</span>`;
     }
     document.querySelector(".modal-check p").innerText = pickedQuestion.know_more;
+    stopInterval();
+}
+
+let interval = () => {};
+const countdownText = document.querySelector(".countdown-content .countdown p");
+let secondes = 14;
+
+const startCountdown = () => {
+    interval = setInterval(() => {
+        countdownText.innerText = secondes;
+        secondes--;
+    }, 1000);
+}
+
+const stopInterval = () => {
+    clearInterval(interval);
+    secondes = 14;
+    countdownText.innerText = 15;
 }
 
 // Début du jeu
@@ -125,6 +151,7 @@ startButton.addEventListener("click", () => {
     displayQuestion();
 })
 validButton.addEventListener("click", () => {
+    clearInterval(timeOut);
     displayKnowmore();
 })
 nextButton.addEventListener("click", () => {
