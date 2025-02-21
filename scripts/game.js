@@ -63,6 +63,11 @@ const displayQuestion = () => {
                     </label>`)
     })
     timeOut = setTimeout(noAnswer, 15000);
+    document.querySelectorAll(".options").forEach((option) => {
+        option.addEventListener("change", () => {
+            validButton.disabled = false;
+        });
+    });
 }
 
 const checkAnswer = (answerGiven) => {
@@ -119,6 +124,7 @@ const displayKnowmore = () => {
     }
     document.querySelector(".modal-check p").innerText = pickedQuestion.know_more;
     stopInterval();
+    validButton.disabled = true;
 }
 
 let interval = () => {};
