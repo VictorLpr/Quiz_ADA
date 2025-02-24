@@ -1,5 +1,5 @@
 import { themeChoice } from "./theme_choice.js";
-import { pickQuestion, pickedQuiz, pickedQuestion} from "./pick_question.js";
+import { pickQuestion, pickedQuiz, pickedQuestion } from "./pick_question.js";
 import { displayQuestion, timeOut } from "./display_question.js";
 import { displayKnowmore } from "./display_know_more.js";
 import { displayResult } from "./display_result.js";
@@ -12,13 +12,17 @@ const nextButton = document.querySelector("#next-button");
 const result = document.querySelector(".result");
 const resetButton = document.querySelector(".result #reset");
 const modal = document.querySelector(".modal-check");
+const playerName = document.querySelector("#name");
 export const turn = 4;
 export let questionCount = turn;
 export let subjectChoices = [];
 const themeButtons = document.querySelectorAll('.subject-list button');
 const subjectContent = document.querySelector(".subject");
 const startButton = document.querySelector("#start");
-
+let gameNumber = 1;
+if (localStorage.getItem("gameNumber") > 1) {
+    gameNumber = parseInt(localStorage.getItem("gameNumber")) + 1
+}
 // 3 gros soucis :
 
 // pickedQuestion => je l'ai créé dans le fichier qui la met à jour et après dans les autres,
@@ -53,13 +57,24 @@ themeChoice(themeButtons, subjectChoices);
 
 // Lance le jeu en cliquant sur c'est parti
 startButton.addEventListener("click", () => {
-    // choisit la premier question
-    pickQuestion(subjectChoices);
-    subjectContent.style.display = "none";
-    quizContent.style.display = "flex";
-    updateScore(0);
-    console.log(updateScore(0))
-    displayQuestion(pickedQuiz, pickedQuestion);
+    if (playerName.value == "") {
+        playerName.focus();
+    } else {
+        // choisit la premier question
+        let player = {
+            name: playerName.value,
+            score: 0,
+            id: new Date()
+        }
+        console.log(player)
+        localStorage.setItem(gameNumber++, JSON.stringify(player));
+        pickQuestion(subjectChoices);
+        subjectContent.style.display = "none";
+        quizContent.style.display = "flex";
+        updateScore(0);
+        console.log(updateScore(0))
+        displayQuestion(pickedQuiz, pickedQuestion);
+    }
 })
 
 
@@ -72,7 +87,7 @@ validButton.addEventListener("click", () => {
 nextButton.addEventListener("click", () => {
     modal.style.display = "none";
     if (questionCount === 1) {
-        displayResult();
+        displayResult(gameNumber - 1);
         return;
     }
     questionCount--;

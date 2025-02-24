@@ -16,6 +16,14 @@
 /* font-family: "Cinzel", serif; */
 
 /*////////////////// GENERAL ////////////////*/
+:root {
+    --main:qsd;
+    --firstColor:qsd;
+    --secondColor:qsd;
+    --thirdColor:qds;
+    --fourthColor:qsd;
+    --fifthColor:qsd;
+}
 body {
     background: -webkit-linear-gradient(to right, #ddd6f3, #faaca8);
     background: linear-gradient(to right, #445067, #0e7ac1);
@@ -247,7 +255,7 @@ h2 {
     background-color: rgb(88, 115, 225);
 }
 
-input {
+.options-content input {
     display: none;
 }
 
