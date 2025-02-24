@@ -51,6 +51,22 @@ h2 {
 
 /*////////////////// eo: GENERAL ////////////////*/
 
+/*////////////////// SCORE BOARD LINK ////////////////*/
+.score-board-link {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.score-board-link img {
+    height: 60px;
+    @media screen and (min-width: 768px) {
+        height: 150px;
+    }
+
+}
+
+/*////////////////// eo : SCORE BOARD LINK ////////////////*/
+
 /*////////////////// MAIN ////////////////*/
 .edwige {
     height: 100vh;
@@ -137,7 +153,24 @@ h2 {
     box-shadow: 2px 0px 15px 3px hsla(0, 0%, 0%, 0.13);
     background-color: #44506767;
 }
+#name {
+    text-align: center;
+    border-radius: 10px;
+    height: 30px;
+    background-color: rgb(147, 32, 147);
+    color: greenyellow;
+    
+}
+#name::placeholder{
+    color: greenyellow;  
+}
 
+.name-content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 15px;
+}
 /*////////////////// eo: SUBJECT ////////////////*/
 
 /*////////////////// QUIZ ////////////////*/
