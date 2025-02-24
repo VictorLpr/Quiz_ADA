@@ -186,7 +186,7 @@ h2 {
     height: 50px;
     margin-bottom: 20px;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 768px) and (min-height: 600px){
         height: 150px;
     }
 }
