@@ -14,6 +14,7 @@ const result = document.querySelector(".result");
 const resetButton = document.querySelector(".result #reset");
 const modal = document.querySelector(".modal-check");
 const playerName = document.querySelector("#name");
+const scoreBoardLogo = document.querySelector(".score-board-link")
 export const turn = 4;
 export let questionCount = turn;
 export let subjectChoices = [];
@@ -77,6 +78,8 @@ startButton.addEventListener("click", () => {
         pickQuestion(subjectChoices);
         subjectContent.style.display = "none";
         quizContent.style.display = "flex";
+        scoreBoardLogo.style.display = "none";
+
         updateScore(0);
         console.log(updateScore(0))
         displayQuestion(pickedQuiz, pickedQuestion);
@@ -93,6 +96,7 @@ validButton.addEventListener("click", () => {
 nextButton.addEventListener("click", () => {
     modal.style.display = "none";
     if (questionCount === 1) {
+        scoreBoardLogo.style.display = "block";
         displayResult(gameNumber - 1);
         return;
     }
