@@ -1,10 +1,15 @@
 @font-face {
     font-family: 'night-melody-demo.regular';
-    src: url('./assets/Fonts/night-melody-demo.regular.eot'); /* IE9 Compat Modes */
-    src: url('./assets/Fonts/night-melody-demo.regular.eot') format('embedded-opentype'), /* IE6-IE8 */
-         url('./assets/Fonts/night-melody-demo.regular.woff') format('woff'), /* Modern Browsers */
-         url('./assets/Fonts/night-melody-demo.regular.ttf')  format('truetype') /* Safari, Android, iOS */
+    src: url('./assets/Fonts/night-melody-demo.regular.eot');
+    /* IE9 Compat Modes */
+    src: url('./assets/Fonts/night-melody-demo.regular.eot') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('./assets/Fonts/night-melody-demo.regular.woff') format('woff'),
+        /* Modern Browsers */
+        url('./assets/Fonts/night-melody-demo.regular.ttf') format('truetype')
+        /* Safari, Android, iOS */
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 /* font-family: "Quicksand", serif; */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
@@ -28,11 +33,14 @@ body * {
     box-sizing: border-box;
 }
 
-p, h1, h2 {
+p,
+h1,
+h2 {
     width: 100%;
     text-align: center;
     font-family: "Cinzel", serif;
 }
+
 /*////////////////// eo: GENERAL ////////////////*/
 
 /*////////////////// MAIN ////////////////*/
@@ -57,7 +65,7 @@ p, h1, h2 {
     position: relative;
     width: 90%;
     /* height: 70%; */
-    min-height: 500px;
+    min-height: 400px;
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(3.5px);
@@ -69,10 +77,12 @@ p, h1, h2 {
     justify-content: center;
     align-items: center;
     padding: 10px 0;
+
     @media screen and (min-width: 768px) {
         width: 60%;
     }
 }
+
 /*////////////////// eo: GENERAL ////////////////*/
 
 /*////////////////// SUBJECT ////////////////*/
@@ -101,20 +111,25 @@ p, h1, h2 {
     transition: .1s ease-in-out;
     background-color: #3535356e;
     color: #ddd6f3;
+
     @media screen and (min-width: 768px) {
         font-size: 1.5rem;
     }
 }
 
 .subject-list button:hover {
-    transform: translateY(-3px);
-    box-shadow: 2px 7px 15px 3px hsla(0, 0%, 0%, 0.13);
+    @media screen and (min-width: 768px) {
+        transform: translateY(-3px);
+        box-shadow: 2px 7px 15px 3px hsla(0, 0%, 0%, 0.13);
+    }
 }
+
 .subject-list button[selected] {
     transform: translateY(3px);
-    box-shadow: 2px 0px 15px 3px hsla(0, 0%, 0%, 0.13) ;
+    box-shadow: 2px 0px 15px 3px hsla(0, 0%, 0%, 0.13);
     background-color: #44506767;
 }
+
 /*////////////////// eo: SUBJECT ////////////////*/
 
 /*////////////////// QUIZ ////////////////*/
@@ -162,6 +177,7 @@ p, h1, h2 {
     width: 200px;
     height: 50px;
     margin-bottom: 20px;
+
     @media screen and (min-width: 768px) {
         height: 150px;
     }
@@ -185,7 +201,7 @@ p, h1, h2 {
     margin: 0 auto;
 }
 
-.options-content{
+.options-content {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -205,7 +221,7 @@ p, h1, h2 {
     background-color: rgb(76, 79, 154);
     width: 600px;
     max-width: 80%;
-    height: 55px;
+    height: 46px;
     /* aspect-ratio: 1/1; */
     border-radius: 10px;
     cursor: pointer;
@@ -222,9 +238,9 @@ p, h1, h2 {
 }
 
 .options-content>label:hover {
- background-color: rgb(52, 64, 119);
- transform: translateY(-3px);
- animation: wizz 0.75s ;
+    background-color: rgb(52, 64, 119);
+    transform: translateY(-3px);
+    animation: wizz 0.75s;
 }
 
 .options-content>label:has(input:checked) {
@@ -241,8 +257,13 @@ button {
     cursor: pointer;
 }
 
-.valid, .next {
+.valid,
+.next {
     width: 100%;
+}
+
+button:disabled {
+    opacity: .5;
 }
 
 #start,
@@ -253,22 +274,25 @@ button {
     border: none;
     background-color: #445067;
     color: #ddd6f3;
-    padding: 5px 0 ;
+    padding: 5px 0;
     width: 90%;
     max-width: 200px;
 }
+
 /*////////////////// eo: QUIZ ////////////////*/
 
 /*////////////////// RESULT ////////////////*/
 .result {
     position: relative;
-    width: 100%;
+    width: 95%;
     height: 100%;
     display: none;
     /* display: flex; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: hsl(208, 92%, 41%);
+    border-radius: 10px;
 }
 
 .result>p:first-child {
@@ -277,12 +301,13 @@ button {
 }
 
 #resultComment {
-    font-size: 4rem;
+    font-size: 3.8rem;
 }
 
 #score {
     font-weight: 900;
     font-size: 32px;
+    margin: 20px 0;
 }
 
 #reset {
@@ -291,6 +316,7 @@ button {
     right: 20px;
     cursor: pointer;
 }
+
 /*////////////////// eo: RESULT ////////////////*/
 
 /*////////////////// MODAL ////////////////*/
@@ -312,7 +338,7 @@ button {
 }
 
 .modal-check h2 {
-    font-size: 4rem;
+    font-size: 3.8rem;
     line-height: 2rem;
     margin: 20px 0 0;
 }
@@ -324,10 +350,12 @@ button {
 
 .modal-check p {
     font-size: 1.3rem;
+
     @media screen and (min-width: 768px) {
         max-width: 80%;
     }
 }
+
 /*////////////////// eo: MODAL ////////////////*/
 
 /*////////////////// PROGRESS BAR ////////////////*/
@@ -352,19 +380,51 @@ button {
     transform-origin: left;
     transition: .3s ease-in-out;
 }
+
 /*////////////////// eo: PROGRESS BAR ////////////////*/
 
 @keyframes wizz {
-    0% { transform: translateY(-3px) translateX(0); }
-    10% { transform: translateY(-3px) translateX(-3px); }
-    20% { transform: translateY(-3px) translateX(3px); }
-    30% { transform: translateY(-3px) translateX(-3px); }
-    40% { transform: translateY(-3px) translateX(3px); }
-    50% { transform: translateY(-3px) translateX(-3px); }
-    60% { transform: translateY(-3px) translateX(3px); }
-    70% { transform: translateY(-3px) translateX(-3px); }
-    80% { transform: translateY(-3px) translateX(3px); }
-  
-    90% { transform: translateY(-3px) translateX(-3px); }
-    100% { transform: translateY(-3px) translateX(0); }
-  }
+    0% {
+        transform: translateY(-3px) translateX(0);
+    }
+
+    10% {
+        transform: translateY(-3px) translateX(-3px);
+    }
+
+    20% {
+        transform: translateY(-3px) translateX(3px);
+    }
+
+    30% {
+        transform: translateY(-3px) translateX(-3px);
+    }
+
+    40% {
+        transform: translateY(-3px) translateX(3px);
+    }
+
+    50% {
+        transform: translateY(-3px) translateX(-3px);
+    }
+
+    60% {
+        transform: translateY(-3px) translateX(3px);
+    }
+
+    70% {
+        transform: translateY(-3px) translateX(-3px);
+    }
+
+    80% {
+        transform: translateY(-3px) translateX(3px);
+    }
+
+    90% {
+        transform: translateY(-3px) translateX(-3px);
+    }
+
+    100% {
+        transform: translateY(-3px) translateX(0);
+    }
+}
