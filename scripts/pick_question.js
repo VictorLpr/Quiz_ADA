@@ -1,18 +1,18 @@
-import {subjectChoices, pickedQuestion, pickedQuiz} from "./game.js";
 import { quiz } from "./questions.js";
+export let pickedQuiz;
+export let pickedQuestion;
 
-
-// Sélectionne une question au hasard parmis les thèmes choisis
-// export const pickQuestion = (subjectChoices, pickedQuestion, pickedQuiz) => {
-//     const quizIndex = Math.floor(Math.random() * subjectChoices.length);
-//     const questionIndex = Math.floor(Math.random() * quiz[subjectChoices[quizIndex]].questions.length)
-//     pickedQuestion = quiz[subjectChoices[quizIndex]].questions[questionIndex];
-//     pickedQuiz = quiz[subjectChoices[quizIndex]];
-//     console.log(pickedQuestion);
-//     if (pickedQuestion.done == true) {
-//         pickQuestion();
-//     } else {
-//         pickedQuestion.done = true;
-//         return pickedQuestion, pickedQuiz;
-//     }
-// }
+// Lancée dans game
+export const pickQuestion = (choice) => {
+    const quizIndex = Math.floor(Math.random() * choice.length);
+    const questionIndex = Math.floor(Math.random() * quiz[choice[quizIndex]].questions.length);
+    pickedQuestion = quiz[choice[quizIndex]].questions[questionIndex];
+    pickedQuiz = quiz[choice[quizIndex]];
+    console.log(pickedQuestion);
+    if (pickedQuestion.done == true) {
+        pickQuestion(choice);
+    } else {
+        pickedQuestion.done = true;
+        return pickedQuestion;
+    }
+}

@@ -1,165 +1,74 @@
-import { quiz } from "./questions.js";
+import { themeChoice } from "./theme_choice.js";
+import { pickQuestion, pickedQuiz, pickedQuestion} from "./pick_question.js";
+import { displayQuestion, timeOut } from "./display_question.js";
+import { displayKnowmore } from "./display_know_more.js";
+import { displayResult } from "./display_result.js";
+import { updateProgress } from "./update_progress.js";
+import { updateScore } from "./update_score.js";
 
 const quizContent = document.querySelector(".quiz");
-const currentQuestion = document.querySelector(".quiz .question p");
-const logo = document.querySelector(".logo img");
-const optionsContent = document.querySelector(".options-content");
 const validButton = document.querySelector("#valid-button");
 const nextButton = document.querySelector("#next-button");
 const result = document.querySelector(".result");
-const scoreContent = document.querySelector(".result #score");
-const resultComment = document.querySelector(".result #resultComment");
 const resetButton = document.querySelector(".result #reset");
 const modal = document.querySelector(".modal-check");
-const progressValue = document.querySelector(".progress-value");
-const turn = 4;
-let questionCount = turn;
-let score = 0;
-let subjectChoices = [];
+export const turn = 4;
+export let questionCount = turn;
+export let subjectChoices = [];
 const themeButtons = document.querySelectorAll('.subject-list button');
 const subjectContent = document.querySelector(".subject");
 const startButton = document.querySelector("#start");
-let pickedQuestion;
-let pickedQuiz;
 
-const selectTheme = (btn) => {
-    if (btn.hasAttribute('selected') == false) {
-        btn.setAttribute('selected', '');
-        subjectChoices.push(btn.dataset.value);
-        console.log('et les sélectionnés sont : ' + subjectChoices)
-    } else {
-        btn.removeAttribute('selected');
-        subjectChoices.splice(subjectChoices.indexOf(btn.dataset.value), 1);
-        console.log('hello ' + subjectChoices)
-    }
-}
-const themeChoice = () => {
-    themeButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-            selectTheme(button);
-        })
-    })
-    return subjectChoices;
-}
+// 3 gros soucis :
 
-const updateProgress = () => {
-    progressValue.style.transform = `scaleX(${(turn - questionCount) / (turn)})`;
-}
+// pickedQuestion => je l'ai créé dans le fichier qui la met à jour et après dans les autres,
+// ce n'est que de la lecture donc pas de problème de affectation à une constante
 
-let timeOut = () => {}
 
-const displayQuestion = () => {
-    optionsContent.innerHTML = "";
-    currentQuestion.innerHTML = "";
-    updateProgress();
-    startCountdown();
-    logo.src = pickedQuiz.url_logo;
-    currentQuestion.innerText = pickedQuestion.text;
-    pickedQuestion.options.forEach((option, i) => {
-        console.log(option)
-        optionsContent.insertAdjacentHTML("beforeend", `<label for="option-${i + 1}">
-                        <input name="options" type="radio" class="options" id="option-${i + 1}" value="${option}" />
-                        <p>${option}</p>
-                    </label>`)
-    })
-    timeOut = setTimeout(noAnswer, 15000);
-    document.querySelectorAll(".options").forEach((option) => {
-        option.addEventListener("change", () => {
-            validButton.disabled = false;
-        });
-    });
-}
 
-const checkAnswer = (answerGiven) => {
-    if (answerGiven === pickedQuestion.correct_answer) {
-        console.log("gagné")
-        return true;
-    }
-    return false;
-}
+// update secondes :
+// updates_secondes => permet de mettre à jour la variable seconde dans un seul fichier 
+// et de juste appeller cette fonction sans import de la variable seconde
 
-const displayResult = () => {
-    quizContent.style.display = "none";
-    result.style.display = "flex";
-    scoreContent.innerText = `${score}/${turn}`;
-    if (score < turn / 2) {
-        resultComment.innerText = "nul(lllll) !!!";
-    } else {
-        resultComment.innerText = "Champion !";
-    }
-    progressValue.style.transform = `scaleX(1)`
-}
 
-const pickQuestion = () => {
-    const quizIndex = Math.floor(Math.random() * subjectChoices.length);
-    const questionIndex = Math.floor(Math.random() * quiz[subjectChoices[quizIndex]].questions.length)
-    pickedQuestion = quiz[subjectChoices[quizIndex]].questions[questionIndex];
-    pickedQuiz = quiz[subjectChoices[quizIndex]];
-    console.log(pickedQuestion);
-    if (pickedQuestion.done == true) {
-        pickQuestion();
-    } else {
-        pickedQuestion.done = true;
-        return pickedQuestion;
-    }
-}
-const noAnswer = () => {
-    modal.style.display = "flex";
-    document.querySelector(".modal-check h2").innerHTML = `Trop tard...</br></br> <span> la réponse était : ${pickedQuestion.correct_answer}</span>`;
-    document.querySelector(".modal-check p").innerText = pickedQuestion.know_more;
-    stopInterval();
-}
 
-const displayKnowmore = () => {
-    let answerGiven = "";
-    if (document.querySelector('input:checked')) {
-        answerGiven = document.querySelector('input:checked').value;
-    }
-    modal.style.display = "flex";
-    if (checkAnswer(answerGiven) == true) {
-        document.querySelector(".modal-check h2").innerText = "Bravo";
-        score++;
-    } else {
-        document.querySelector(".modal-check h2").innerHTML = `Nul(l) </br></br> <span> la réponse était : ${pickedQuestion.correct_answer}</span>`;
-    }
-    document.querySelector(".modal-check p").innerText = pickedQuestion.know_more;
-    stopInterval();
-    validButton.disabled = true;
-}
+// update score :
+// update_score => permet de mettre à jour la variable score dans un seul fichier
+// appel de la fonction updateScore()
+// Problème de reset, le score s'accumulais
 
-let interval = () => {};
-const countdownText = document.querySelector(".countdown-content .countdown p");
-let secondes = 14;
+// let scoring = score;
+// const modal = document.querySelector(".modal-check");
+// const validButton = document.querySelector("#valid-button");
 
-const startCountdown = () => {
-    interval = setInterval(() => {
-        countdownText.innerText = secondes;
-        secondes--;
-    }, 1000);
-}
+// export const displayKnowmore = () => {
+//     scoring = score;        il falait juste que je réasigne la variable scoring de transition avec le score mis à jour à 0 par le btn reset
+//     let answerGiven = "";
 
-const stopInterval = () => {
-    clearInterval(interval);
-    secondes = 14;
-    countdownText.innerText = 15;
-}
 
 // Début du jeu
 // Choix du thème parmis des thèmes proposés
-themeChoice();
+themeChoice(themeButtons, subjectChoices);
+
 
 // Lance le jeu en cliquant sur c'est parti
 startButton.addEventListener("click", () => {
     // choisit la premier question
-    pickQuestion();
+    pickQuestion(subjectChoices);
     subjectContent.style.display = "none";
     quizContent.style.display = "flex";
-    displayQuestion();
+    updateScore(0);
+    console.log(updateScore(0))
+    displayQuestion(pickedQuiz, pickedQuestion);
 })
+
+
 validButton.addEventListener("click", () => {
     clearInterval(timeOut);
     displayKnowmore();
 })
+
+
 nextButton.addEventListener("click", () => {
     modal.style.display = "none";
     if (questionCount === 1) {
@@ -167,19 +76,23 @@ nextButton.addEventListener("click", () => {
         return;
     }
     questionCount--;
-    pickQuestion();
-    displayQuestion();
+    pickQuestion(subjectChoices);
+    displayQuestion(pickedQuiz, pickedQuestion);
 })
 
-resetButton.addEventListener('click', () => {
-    questionCount = turn;
-    updateProgress();
-    score = 0;
-    subjectChoices = [];
-    themeButtons.forEach((button) => {
 
+resetButton.addEventListener('click', () => {
+    console.log("yo" + subjectChoices);
+    questionCount = turn;
+    updateScore(0);
+    updateProgress();
+    subjectChoices = [];
+    console.log("yoyo" + subjectChoices);
+
+    themeButtons.forEach((button) => {
         button.removeAttribute('selected');
     })
     subjectContent.style.display = "block";
     result.style.display = "none";
+    console.log(subjectChoices)
 })
