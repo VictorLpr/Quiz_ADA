@@ -123,42 +123,42 @@ export const quiz = {
         questions: [
             {
                 done: false,
-                text: "Quel est le Pokémon légendaire de type Acier introduit dans la génération 2\u00a0?",
-                options: ["Lugia", "Suicune", "Registeel", "Moltres"],
+                text: "Quel est le Pokémon légendaire de type Acier introduit dans la génération 3\u00a0?",
+                options: ["Lugia", "Suicune", "Registeel", "Sulfura"],
                 correct_answer: "Registeel",
-                know_more: "Registeel est un Pokémon légendaire de type Acier, introduit dans la troisième génération dans le cadre de la série des Regi. Il est connu pour sa résistance exceptionnelle.",
+                know_more: "Registeel est un Pokémon légendaire de type Acier, introduit dans la troisième génération.",
                 difficulty: 3
             },
             {
                 done: false,
-                text: "Quel est le nom du rival de Sacha dans la région de Kanto\u00a0?",
-                options: ["Pierre", "Alexandre", "Roxanne", "Rival"],
-                correct_answer: "Rival",
-                know_more: "Le rival de Sacha dans la région de Kanto est un Dresseur compétitif qui se met toujours en travers de son chemin, souvent avec des Pokémon puissants.",
+                text: "Quel est le nom officiel du rival du personnage principal dans les jeux Pokémon Bleu et Rouge\u00a0?",
+                options: ["Pierre", "Regis", "Blue", "Satoshi"],
+                correct_answer: "Blue",
+                know_more: "Dans les jeux Pokémon Bleu et Rouge, le nom officiel du personnage principal est Red et son Rival est Blue. Regis est le nom du rival de Sacha dans l'animé et non dans le jeu.",
                 difficulty: 3
             },
             {
                 done: false,
-                text: "Qui est le champion de la Ligue Pokémon de la région de Johto\u00a0?",
-                options: ["Roxanne", "Claire", "Red", "Wally"],
-                correct_answer: "Claire",
-                know_more: "Claire est la championne de la Ligue Pokémon de la région de Johto. Elle est spécialisée dans les Pokémon de type Dragon et est connue pour son caractère difficile.",
+                text: "Qui est le champion de la Ligue Pokémon de la région de Sinnoh\u00a0?",
+                options: ["Roxanne", "Claire", "Cynthia", "Wally"],
+                correct_answer: "Cynthia",
+                know_more: "Cynthia est la championne de la Ligue Pokémon de la région de Sinnoh (4ème génération). C'est la première fois que le champion de la Ligue Pokémon est une championne.",
                 difficulty: 4
             },
             {
                 done: false,
-                text: "Quel est le Pokémon de type Spectre qui évolue à partir d'un Pokémon de type Normal grâce à une pierre spéciale\u00a0?",
-                options: ["Sableye", "Mimikyu", "Zoroark", "Gengar"],
-                correct_answer: "Mimikyu",
-                know_more: "Mimikyu est un Pokémon de type Spectre/Fée, qui évolue à partir de Pikachu (selon le lore), mais il se cache sous un déguisement pour tenter de ressembler à Pikachu.",
+                text: "Comment fait-on évoluer Spectrum en Ectoplasma\u00a0?",
+                options: ["En utilisant une pierre Lune", "En l'échangeant avec le Pokémon d'un autre joueur", "En le faisant monter au niveau 36 lors d'un combat", "Il n'évolue pas"],
+                correct_answer: "En l'échangeant avec le Pokémon d'un autre joueur",
+                know_more: "Spectrum évolue d'une manière spéciale. En effet, il fait partie des rares Pokémon à évoluer via un échange avec un autre joueur.",
                 difficulty: 4
             },
             {
                 done: false,
-                text: "Quel Pokémon légendaire fait partie du trio des oiseaux légendaires de Kanto\u00a0?",
-                options: ["Moltres", "Articuno", "Zapdos", "Ho-Oh"],
-                correct_answer: "Articuno",
-                know_more: "Articuno est un Pokémon légendaire de type Glace/Vol, l'un des trois oiseaux légendaires de la région de Kanto. Il représente la glace et la neige.",
+                text: "Quel Pokémon légendaire ne fait pas partie du trio des oiseaux légendaires de Kanto\u00a0?",
+                options: ["Sulfura", "Artikodin", "Electhor", "Ho-Oh"],
+                correct_answer: "Ho-Oh",
+                know_more: "Ho-Oh est bien un oiseau légendaire, mais il est apparu dans la 2ème génération (Johto).",
                 difficulty: 3
             },
             {
@@ -167,19 +167,19 @@ export const quiz = {
                 options: ["Psy", "Combat", "Ténèbres", "Normal"],
                 correct_answer: "Psy",
                 know_more: "Mewtwo est un Pokémon légendaire de type Psy, créé par manipulation génétique à partir de Mew. Il possède une puissance psychique colossale.",
-                difficulty: 3
+                difficulty: 2
             },
             {
                 done: false,
-                text: "Quel est le nom de l'évolution finale de l'attaque spéciale de type Feu de l’évolution de Dracaufeu\u00a0?",
-                options: ["Flammes d'extinction", "Dracofeu", "Mega Dracaufeu X", "Mega Dracaufeu Y"],
-                correct_answer: "Mega Dracaufeu X",
-                know_more: "Mega Dracaufeu X est une forme spéciale qui se transforme grâce à une méga-évolution, offrant de nouvelles capacités et de nouvelles attaques.",
+                text: "Lorsque Dracaufeu est sous la forme Méga-Dracaufeu X, quel est son double type\u00a0?",
+                options: ["Feu/Vol", "Feu/Dragon", "Feu/Ténèbres", "Feu/Fée"],
+                correct_answer: "Feu/Dragon",
+                know_more: "Méga-Dracaufeu X est l'une des méga-évolutions de Dracaufeu et il est de type Feu et Dragon, contrairement à Dracaufeu qui est de type Feu et Vol. La méga-évolition est un principe de changement de forme introduit dans la 6ème génération.",
                 difficulty: 4
             },
             {
                 done: false,
-                text: "Qui est le créateur du Pokémon Pikachu\u00a0?",
+                text: "Qui est le créateur de la licence Pokémon\u00a0?",
                 options: ["Junichi Masuda", "Satoshi Tajiri", "Tetsuya Nomura", "Hiroshi Yamauchi"],
                 correct_answer: "Satoshi Tajiri",
                 know_more: "Satoshi Tajiri est le créateur de Pokémon et l'un des fondateurs de Game Freak, le studio de développement des jeux Pokémon.",
@@ -187,10 +187,10 @@ export const quiz = {
             },
             {
                 done: false,
-                text: "Comment s'appelle le Professeur qui guide le joueur dans la région de Sinnoh\u00a0?",
-                options: ["Professeur Sycamore", "Professeur Oak", "Professeur Rowan", "Professeur Kukui"],
-                correct_answer: "Professeur Rowan",
-                know_more: "Le Professeur Rowan est le chercheur principal en biologie Pokémon de la région de Sinnoh. Il s'intéresse particulièrement aux Pokémon légendaires.",
+                text: "Comment s'appelle le Professeur qui guide le joueur dans la région de Hoenn\u00a0?",
+                options: ["Professeur Orme", "Professeur Chen", "Professeur Platane", "Professeur Seko"],
+                correct_answer: "Professeur Seko",
+                know_more: "Le Professeur Seko est le chercheur principal de la région de Hoenn (3ème génération). Il a été formé par le Professeur Chen.",
                 difficulty: 5
             },
             {
@@ -399,10 +399,10 @@ export const quiz = {
             },
             {
                 done: false,
-                text: "Quel est le nom du titan qui porte le ciel sur ses épaules\u00a0?",
+                text: "Quel est le nom du titan qui porte la voûte céleste sur ses épaules\u00a0?",
                 options: ["Cronos", "Prométhée", "Atlas", "Éole"],
                 correct_answer: "Atlas",
-                know_more: "Atlas est un titan puni par Zeus, condamné à porter le ciel sur ses épaules.",
+                know_more: "Atlas est un titan puni par Zeus, condamné à porter la voûte céleste sur ses épaules.",
                 difficulty: 2
             },
             {
@@ -410,7 +410,7 @@ export const quiz = {
                 text: "Qui est le dieu grec des mers et des océans\u00a0?",
                 options: ["Apollon", "Poséidon", "Hermès", "Hadès"],
                 correct_answer: "Poséidon",
-                know_more: "Poséidon est le frère de Zeus et d'Hadès, et il est le dieu des mers, des océans, et des tremblements de terre.",
+                know_more: "Poséidon est le frère de Zeus et d'Hadès. Il est le dieu des mers, des océans, des séismes et des chevaux.",
                 difficulty: 1
             },
             {
@@ -423,10 +423,10 @@ export const quiz = {
             },
             {
                 done: false,
-                text: "Quelle déesse est née de la mousse de la mer et est associée à la beauté et à l'amour\u00a0?",
+                text: "Quelle déesse est née de l'écume et est associée à la beauté et à l'amour\u00a0?",
                 options: ["Déméter", "Aphrodite", "Héra", "Artémis"],
                 correct_answer: "Aphrodite",
-                know_more: "Aphrodite est la déesse de la beauté et de l'amour. Selon la mythologie, elle est née de la mousse de la mer.",
+                know_more: "Aphrodite est la déesse de la beauté et de l'amour. Selon la mythologie, elle est née de l'écume.",
                 difficulty: 1
             },
             {
@@ -434,12 +434,12 @@ export const quiz = {
                 text: "Quel est le nom du fils d'Achille, qui a combattu à la guerre de Troie\u00a0?",
                 options: ["Hector", "Pâris", "Patrocle", "Néoptolème"],
                 correct_answer: "Néoptolème",
-                know_more: "Néoptolème est le fils d'Achille et de Deidamia. Il a joué un rôle clé dans la guerre de Troie.",
+                know_more: "Néoptolème est le fils d'Achille et de Déidamie. Il a joué un rôle clé dans la guerre de Troie.",
                 difficulty: 4
             },
             {
                 done: false,
-                text: "Quel dieu a offert le feu aux humains, malgré l'interdiction de Zeus\u00a0?",
+                text: "Qui a offert le feu aux humains, malgré l'interdiction de Zeus\u00a0?",
                 options: ["Hermès", "Apollon", "Prométhée", "Dionysos"],
                 correct_answer: "Prométhée",
                 know_more: "Prométhée est un titan qui a volé le feu aux dieux pour le donner aux humains, ce qui a provoqué la colère de Zeus.",
@@ -471,10 +471,10 @@ export const quiz = {
             },
             {
                 done: false,
-                text: "Quel titan a engendré les trois Cyclopes\u00a0?",
+                text: "Qui a engendré les trois Cyclopes\u00a0?",
                 options: ["Uranus", "Cronos", "Gaïa", "Prométhée"],
                 correct_answer: "Gaïa",
-                know_more: "Gaïa, la Terre, est la mère des Cyclopes, ainsi que d'autres créatures mythologiques comme les Titans.",
+                know_more: "Gaïa, déesse primordiale symbolisant la Terre, est la mère des Cyclopes, ainsi que d'autres créatures mythologiques comme les Titans.",
                 difficulty: 4
             },
             {
@@ -482,7 +482,7 @@ export const quiz = {
                 text: "Quel est le nom de l'épouse d'Hadès, déesse du royaume des morts\u00a0?",
                 options: ["Athéna", "Héra", "Déméter", "Perséphone"],
                 correct_answer: "Perséphone",
-                know_more: "Perséphone est la reine des Enfers, enlevée par Hadès. Elle passe une partie de l'année dans le royaume des morts.",
+                know_more: "Perséphone est la reine des Enfers, initialement enlevée par Hadès. Elle passe une partie de l'année dans le royaume des morts.",
                 difficulty: 3
             },
             {
@@ -519,16 +519,16 @@ export const quiz = {
             },
             {
                 done: false,
-                text: "Quel héros a été tué par son propre fils, Télémaque\u00a0?",
+                text: "Quel héros a été tué par son propre fils, Télégonos\u00a0?",
                 options: ["Achille", "Hercule", "Ulysse", "Pâris"],
                 correct_answer: "Ulysse",
-                know_more: "Ulysse, le héros de l'Odyssée, a été tué par son fils Télémaque lors de son retour à Ithaque.",
+                know_more: "Ulysse, le héros de l'Odyssée, a été tué par son fils caché Télégonos, qu'il a eu avec Circé.",
                 difficulty: 5
             },
             {
                 done: false,
                 text: "Quel est le nom de l'archer mythologique qui a tué Achille\u00a0?",
-                options: ["Pâris", "Hector", "Achille", "Paris"],
+                options: ["Pâris", "Hector", "Ulysse", "Artémis"],
                 correct_answer: "Pâris",
                 know_more: "Pâris est le prince troyen qui, selon la mythologie, a tué Achille avec une flèche dirigée vers son talon.",
                 difficulty: 4
