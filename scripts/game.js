@@ -5,6 +5,7 @@ import { displayKnowmore } from "./display_know_more.js";
 import { displayResult } from "./display_result.js";
 import { updateProgress } from "./update_progress.js";
 import { updateScore } from "./update_score.js";
+import { quiz } from "./questions.js";
 
 const quizContent = document.querySelector(".quiz");
 const validButton = document.querySelector("#valid-button");
@@ -16,6 +17,7 @@ const playerName = document.querySelector("#name");
 export const turn = 4;
 export let questionCount = turn;
 export let subjectChoices = [];
+let logoChoices = [];
 const themeButtons = document.querySelectorAll('.subject-list button');
 const subjectContent = document.querySelector(".subject");
 const startButton = document.querySelector("#start");
@@ -61,10 +63,14 @@ startButton.addEventListener("click", () => {
         playerName.focus();
     } else {
         // choisit la premier question
+        subjectChoices.forEach((choice) => {
+            logoChoices.push(quiz[choice].url_logo)
+        })
         let player = {
             name: playerName.value,
             score: 0,
-            id: new Date()
+            id: new Date(),
+            theme: logoChoices
         }
         console.log(player)
         localStorage.setItem(gameNumber++, JSON.stringify(player));
@@ -102,6 +108,7 @@ resetButton.addEventListener('click', () => {
     updateScore(0);
     updateProgress();
     subjectChoices = [];
+    logoChoices = [];
     console.log("yoyo" + subjectChoices);
 
     themeButtons.forEach((button) => {
