@@ -1,5 +1,5 @@
 import { turn } from "./game.js";
-import { score, updateScore } from "./update_score.js";
+import { score } from "./update_score.js";
 
 
 const quizContent = document.querySelector(".quiz");
@@ -19,8 +19,11 @@ export const displayResult = (gNumber) => {
     console.log(player)
     if (score < turn / 2) {
         resultComment.innerText = "nul(lllll) !!!";
+    } else if (score <= (turn * 3 / 4)){
+        resultComment.innerText = "OK tier";
     } else {
         resultComment.innerText = "Champion !";
+
     }
     progressValue.style.transform = `scaleX(1)`;
 }

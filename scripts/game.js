@@ -90,7 +90,7 @@ startButton.addEventListener("click", () => {
 
 validButton.addEventListener("click", () => {
     clearInterval(timeOut);
-    displayKnowmore();
+    displayKnowmore(pickedQuiz);
 })
 
 

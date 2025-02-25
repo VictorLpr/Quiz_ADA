@@ -23,6 +23,12 @@ export const displayQuestion = (pQuiz, pQuestion) => {
                         <p>${option}</p>
                     </label>`)
     })
+    setTimeout(() => {
+        const labels = document.querySelectorAll("label")
+        labels.forEach(label => {
+            label.classList.add("load")
+        })
+    },200)
     timeOut = setTimeout(noAnswer, 15000);
     document.querySelectorAll(".options").forEach((option) => {
         option.addEventListener("change", () => {

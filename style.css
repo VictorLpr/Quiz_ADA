@@ -229,6 +229,7 @@ h2 {
     height: 100%;
     object-fit: contain;
     object-position: center;
+    animation: rotate 4.5s linear infinite;
 }
 
 .question {
@@ -269,7 +270,30 @@ h2 {
     margin: 0 0 10px;
     padding: 0px 20px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
-    transition: .3s ease-in-out;
+    transform: translateX(-30%);
+    opacity: 0;
+}
+
+.options-content>label.load {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.options-content>label.load:nth-child(1) {
+    transition: transform .4s ease-in-out, opacity .4s ease-in-out;
+
+}
+
+.options-content>label.load:nth-child(2) {
+    transition: transfrom .4s ease-in-out .2s, opacity .4s ease-in-out .2s;
+}
+
+.options-content>label.load:nth-child(3) {
+    transition: transform .4s ease-in-out .4s, opacity .4s ease-in-out .4s;
+}
+
+.options-content>label.load:nth-child(4) {
+    transition: transform .4s ease-in-out .6s, opacity .4s ease-in-out .6s  ;
 }
 
 .options-content>label>p {
@@ -286,6 +310,7 @@ h2 {
 
 .options-content>label:has(input:checked) {
     background-color: rgb(88, 115, 225);
+    transition: none;
 }
 
 .options-content input {
@@ -424,6 +449,30 @@ button:disabled {
 
 /*////////////////// eo: PROGRESS BAR ////////////////*/
 
+/*////////////////// SCORE BOARD ////////////////*/
+th , td {
+    border-bottom: 2px solid hsl(245, 38%, 18%);
+    text-align: center;
+    width: 20px;
+    padding: 0 5px;
+    font-size: 1.5em;
+    color: hsl(14, 58%, 55%);
+}
+td {
+    color: hsl(14, 58%, 55%);
+}
+tr:last-child th,
+tr:last-child td {
+  border-bottom: none; 
+}
+
+.head th:last-child {
+    width: 200px;
+    text-align: left;
+}
+/*////////////////// eo: SCORE BOARD ////////////////*/
+
+
 @keyframes wizz {
     0% {
         transform: translateY(-3px) translateX(0);
@@ -470,7 +519,14 @@ button:disabled {
     }
 }
 
-
+@keyframes rotate {
+    0% {
+        transform: rotateY(-90deg);
+    }
+    100% {
+        transform: rotateY(90deg);
+    }
+}
 
 
 .themes img {

@@ -2,6 +2,8 @@ export const quiz = {
     quiz_1: {
         name: "Le seigneur des anneaux",
         url_logo: "./assets/images/logo_le_seigneur_des_anneaux.png",
+        gif_true: "./assets/gifs/lotr_true.gif",
+        gif_false: "./assets/gifs/lotr_false.gif",
         questions: [
             {
                 done: false,
@@ -120,6 +122,8 @@ export const quiz = {
     quiz_2: {
         name: "Pokémon",
         url_logo: "./assets/images/logo_pokemon.png",
+        gif_true: "./assets/gifs/pokemon_true.gif",
+        gif_false: "./assets/gifs/pokemon_false.gif",
         questions: [
             {
                 done: false,
@@ -206,6 +210,8 @@ export const quiz = {
     quiz_3: {
         name: "Harry Potter",
         url_logo: "./assets/images/logo_harry_potter.png",
+        gif_true: "./assets/gifs/harry_potter_true.gif",
+        gif_false: "./assets/gifs/harry_potter_false.gif",
         questions: [   
             {
                 done: false,
@@ -364,6 +370,8 @@ export const quiz = {
     quiz_4: {
         name: "Mythologie grecque",
         url_logo: "./assets/images/logo_mythologie_grecque.png",
+        gif_true: "./assets/gifs/mythologie_true.gif",
+        gif_false: "./assets/gifs/mythologie_false.gif",
         questions: [   
             {
                 done: false,
