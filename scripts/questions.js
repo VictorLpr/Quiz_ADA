@@ -116,6 +116,54 @@ export const quiz = {
                 correct_answer: "Balrog",
                 know_more: "Le Balrog est un démon de feu et de ténèbres qui garde les Mines de la Moria. Il affronte Gandalf dans une lutte épique sur le Pont de Khazad-dûm.",
                 difficulty: 5
+            },
+            {
+                done: false,
+                text: "Qui est l'auteur du livre *Le Seigneur des Anneaux*\u00a0?",
+                options: ["J.R.R. Tolkien", "C.S. Lewis", "J.K. Rowling", "George R.R. Martin"],
+                correct_answer: "J.R.R. Tolkien",
+                know_more: "J.R.R. Tolkien est l'auteur du *Seigneur des Anneaux*, ainsi que du *Hobbit* et de nombreux autres travaux sur la Terre du Milieu.",
+                difficulty: 1
+            },
+            {
+                done: false,
+                text: "Qui est le roi des Nains de la Montagne Solitaire\u00a0?",
+                options: ["Dáin Pied-d'Acier", "Thorin II Écu-de-Chêne", "Balin", "Kíli"],
+                correct_answer: "Thorin II Écu-de-Chêne",
+                know_more: "Thorin II Écu-de-Chêne est le roi des Nains qui entreprend la quête pour récupérer la Montagne Solitaire et son trésor volé par Smaug.",
+                difficulty: 2
+            },
+            {
+                done: false,
+                text: "Quel est le nom du pays d'origine des Hobbits\u00a0?",
+                options: ["Le Gondor", "Le Rohan", "La Comté", "Le Mordor"],
+                correct_answer: "La Comté",
+                know_more: "La Comté est la région paisible et verdoyante où vivent les Hobbits, avant qu'ils ne soient impliqués dans la quête pour détruire l'Anneau Unique.",
+                difficulty: 1
+            },
+            {
+                done: false,
+                text: "Quel est le nom du frère de Faramir\u00a0?",
+                options: ["Boromir", "Denethor", "Gollum", "Éomer"],
+                correct_answer: "Boromir",
+                know_more: "Boromir est le frère de Faramir et l'un des membres de la Communauté de l'Anneau. Il meurt tragiquement en tentant de prendre l'Anneau Unique.",
+                difficulty: 2
+            },
+            {
+                done: false,
+                text: "Comment s'appelle la ville fortifiée d'où gouverne Denethor, le père de Boromir et Faramir\u00a0?",
+                options: ["Minas Tirith", "Le Gouffre de Helm", "Isengard", "Rohan"],
+                correct_answer: "Minas Tirith",
+                know_more: "Minas Tirith est la capitale de Gondor et le siège du pouvoir de Denethor, le souverain de Gondor, pendant la guerre de l'Anneau.",
+                difficulty: 1
+            },
+            {
+                done: false,
+                text: "Comment se nomme le monstre qui garde le tunnel du Mont Venteux, et qui est tué par Sam et Frodon\u00a0?",
+                options: ["Arachne", "Gollum", "Balrog", "Lurtz"],
+                correct_answer: "Arachne",
+                know_more: "Arachne est une créature monstrueuse, une araignée géante, qui réside dans le tunnel du Mont Venteux, où elle attaque Sam et Frodo.",
+                difficulty: 3
             }
         ]    
     },
@@ -364,6 +412,14 @@ export const quiz = {
                 correct_answer: "Expecto patronum",
                 know_more: "Expecto patronum est un sort permettant de faire apparaître un Patronus. Avada Kedavra provoque la mort instantanée, Endoloris inflige une douleur atroce et Impero permet de prendre le contrôle du corps de la cible.",
                 difficulty: 2
+            },
+            {
+                done: false,
+                text: "De quelle famille Voldemort est-il le descendant ?",
+                options: ["Les Gaunt", "Les Black", "Les Weasley", "Les Lestrange"],
+                correct_answer: "Les Gaunt",
+                know_more: "Les Gaunt sont la famille maternelle de Voldemort. Ils sont descendants directs de Salazar Serpentard, l'un des 4 fondateurs de Poudlard.",
+                difficulty: 3
             }
         ]
     },
