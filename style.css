@@ -22,7 +22,6 @@
     --secondColor:#6A9AB0;
     --thirdColor:#EAD8B1;
     --fourthColor:#995D81;
-    --fifthColor:qsd;
 }
 body {
     background: -webkit-linear-gradient(to right, #ddd6f3, #faaca8);
@@ -88,8 +87,8 @@ h2 {
 .content {
     position: relative;
     width: 90%;
-    /* height: 70%; */
-    min-height: 400px;
+    height: 70%;
+    min-height: 500px;
     background: var(--secondColor);
     box-shadow: 0 8px 32px 0 var(--main);
     backdrop-filter: blur(3.5px);
@@ -161,12 +160,16 @@ h2 {
     color: var(--thirdColor);
     background-color: var(--main);
     opacity: 0.6;
+    font-size: 1.5rem;
     
 }
 #name::placeholder{
     color: var(--thirdColor);
 }
 
+#name:focus {
+    outline: 5px solid var(--thirdColor)
+}
 .name-content {
     display: flex;
     width: 100%;
@@ -423,6 +426,7 @@ button:disabled {
 
     @media screen and (min-width: 768px) {
         max-width: 80%;
+        font-size: 1.8rem;
     }
 }
 .know-more-gif {
@@ -463,6 +467,11 @@ button:disabled {
 /*////////////////// eo: PROGRESS BAR ////////////////*/
 
 /*////////////////// SCORE BOARD ////////////////*/
+.score-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
 th , td {
     border-bottom: 2px solid var(--main);
     text-align: center;
