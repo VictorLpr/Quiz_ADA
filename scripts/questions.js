@@ -252,7 +252,87 @@ export const quiz = {
                 correct_answer: "Dialga",
                 know_more: "Dialga est un Pokémon légendaire de type Acier/Dragon, capable de contrôler le temps. Il fait partie du trio de Sinnoh, représentant le temps.",
                 difficulty: 5
-            }
+            },
+            {
+                done: false,
+                text: "Qui est le seul Pokémon ayant le talent 'Garde Mystik'\u00a0?",
+                options: ["Munja", "Dinoclier", "Grolem", "Garde-de-fer"],
+                correct_answer: "Munja",
+                know_more: "'Garde Mystik', qui est le talent signature de Munja, est apparu lors de la 3ème génération. Le Pokémon doté de ce talent est immunisé à toutes les capacités qui ne sont pas super efficaces sur lui.",
+                difficulty: 5
+            },
+            {
+                done: false,
+                text: "Quel est le nouveau mécanisme de jeu introduit dans la 9ème génération\u00a0?",
+                options: ["Capacité Z", "Dynamax", "Méga évolution", "Téracristallisation"],
+                correct_answer: "Téracristallisation",
+                know_more: "La Téracristallisation est un mécanisme de jeu introduit lors de la 9ème génération avec Pokémon Ecarlate et Pokémon Violet. Elle permet à un Pokémon d'être cristallisé, changeant ainsi ses types d'origine.",
+                difficulty: 3
+            },
+            {
+                done: false,
+                text: "Quelle est la seule faiblesse du type normal\u00a0?",
+                options: ["Ténèbre", "Combat", "Dragon", "Fée"],
+                correct_answer: "Combat",
+                know_more: "Le type normal est l'un des 18 types de la série Pokémon introduit dès la première génération. Sa seule faiblesse est le type combat.",
+                difficulty: 2
+            },
+            {
+                done: false,
+                text: "Quel est le nom du badge d'arène donné par Ondine\u00a0?",
+                options: ["Badge Océan", "Badge Cascade", "Badge Eau", "Badge Pluie"],
+                correct_answer: "Badge Cascade",
+                know_more: "Le badge Cascade est la preuve de la victoire du joueur face à la Championne Ondine. Elle est la Championne d'Azuria et utilise le type eau.",
+                difficulty: 3
+            },
+            {
+                done: false,
+                text: "Quel est le nom du starter plante de la 7ème génération\u00a0?",
+                options: ["Brindibou", "Arcko", "Tortipouss", "Vipélierre"],
+                correct_answer: "Brindibou",
+                know_more: "Brindibou est le Pokémon de type plante de la 7ème génération. Les autres Pokémon de départ sont : Flamiaou et Otaquin.",
+                difficulty: 3
+            },
+            {
+                done: false,
+                text: "De la 2ème à la 4ème génération, à quelle attaque correspond la CT47\u00a0?",
+                options: ["Balayette", "Explosion", "Croco Larme", "Aile d'Acier"],
+                correct_answer: "Aile d'Acier",
+                know_more: "Dans les génétations 2, 3 et 4, la CT47 correspond à l'attaque 'Aile d'Acier'. Dans les autres générations, la CT47 correspond à d'autres attaques, comme par exemple 'Balayette', 'Explosion' ou 'Croco Larme'.",
+                difficulty: 5
+            },
+            {
+                done: false,
+                text: "De que type est le Pokémon Kangourex\u00a0?",
+                options: ["Normal", "Plante", "Combat", "Sol"],
+                correct_answer: "Normal",
+                know_more: "Kangourex est un Pokémon de type normal de la première génération.",
+                difficulty: 1
+            },
+            {
+                done: false,
+                text: "En stratégie Pokémon, comment sont communément appelées les équipes très défensives\u00a0?",
+                options: ["Les hyper offense teams", "Les balanced teams", "Les shield teams", "Les stall teams"],
+                correct_answer: "Les stall teams",
+                know_more: "Le stall est un type de jeu prônant la défense. Les Pokémon jouant dans ce style sont appelés staller.",
+                difficulty: 5
+            },
+            {
+                done: false,
+                text: "A l'époque de la 1ère génération, quel objet devaient utiliser les joueurs pour échanger des Pokémons en connectant leurs GameBoy\u00a0?",
+                options: ["Un cable Pokémon", "Un cable link", "Un cable éthernet", "Un Elekable"],
+                correct_answer: "Un cable link",
+                know_more: "Aux débuts de Pokémon, les joueurs devaient relier leurs GameBoy via un cable link pour pouvoir échanger des Pokémon. Elekable est l'évolution d'Elektek, mais il ne permet malheureusement pas d'échanger des Pokémon.",
+                difficulty: 1
+            },
+            {
+                done: false,
+                text: "Quelle est la ville de départ du tout premier jeu Pokémon\u00a0?",
+                options: ["Bourg-en-Bresse", "Bourg-la-Reine", "Bourg Palette", "Bourg Peinture"],
+                correct_answer: "Bourg Palette",
+                know_more: "Bourg Palette est la ville de départ de la région de Kanto (1ère génération). C'est dans cette ville que l'on trouve la maion du protagoniste ainsi que le laboratoire du Professeur Chen.",
+                difficulty: 1
+            } 
         ]
     },
     quiz_3: {
