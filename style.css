@@ -424,6 +424,31 @@ button:disabled {
 
 /*////////////////// eo: PROGRESS BAR ////////////////*/
 
+/*////////////////// SCORE BOARD ////////////////*/
+th , td {
+    border-bottom: 2px solid hsl(245, 38%, 18%);
+    text-align: center;
+    width: 20px;
+    padding: 0 5px;
+    font-size: 1.5em;
+    color: hsl(14, 58%, 55%);
+}
+td {
+    color: hsl(14, 58%, 55%);
+}
+tr:last-child th,
+tr:last-child td {
+  border-bottom: none; 
+}
+
+.head th:last-child {
+    width: 200px;
+    /* max-width: 200px; */
+    text-align: left;
+}
+/*////////////////// eo: SCORE BOARD ////////////////*/
+
+
 @keyframes wizz {
     0% {
         transform: translateY(-3px) translateX(0);
