@@ -17,19 +17,19 @@
 
 /*////////////////// GENERAL ////////////////*/
 :root {
-    --main:qsd;
-    --firstColor:qsd;
-    --secondColor:qsd;
-    --thirdColor:qds;
-    --fourthColor:qsd;
+    --main:#001F3F;
+    --firstColor:#3A6D8C;
+    --secondColor:#6A9AB0;
+    --thirdColor:#EAD8B1;
+    --fourthColor:#995D81;
     --fifthColor:qsd;
 }
 body {
     background: -webkit-linear-gradient(to right, #ddd6f3, #faaca8);
-    background: linear-gradient(to right, #445067, #0e7ac1);
+    background: linear-gradient(to right, var(--main), var(--firstColor));
     font-family: "Quicksand", serif;
     font-weight: 500;
-    color: #ddd6f3;
+    color: var(--thirdColor);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -90,8 +90,8 @@ h2 {
     width: 90%;
     /* height: 70%; */
     min-height: 400px;
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background: var(--secondColor);
+    box-shadow: 0 8px 32px 0 var(--main);
     backdrop-filter: blur(3.5px);
     -webkit-backdrop-filter: blur(3.5px);
     border-radius: 10px;
@@ -133,8 +133,8 @@ h2 {
     border: none;
     box-shadow: 2px 4px 15px 3px hsla(0, 0%, 0%, 0.13);
     transition: .1s ease-in-out;
-    background-color: #3535356e;
-    color: #ddd6f3;
+    background-color: var(--firstColor);
+    color: var(--thirdColor);
 
     @media screen and (min-width: 768px) {
         font-size: 1.5rem;
@@ -151,18 +151,20 @@ h2 {
 .subject-list button[selected] {
     transform: translateY(3px);
     box-shadow: 2px 0px 15px 3px hsla(0, 0%, 0%, 0.13);
-    background-color: #44506767;
+    background-color: var(--main);
 }
 #name {
     text-align: center;
     border-radius: 10px;
     height: 30px;
-    background-color: rgb(147, 32, 147);
-    color: greenyellow;
+    border: none;
+    color: var(--thirdColor);
+    background-color: var(--main);
+    opacity: 0.6;
     
 }
 #name::placeholder{
-    color: greenyellow;  
+    color: var(--thirdColor);
 }
 
 .name-content {
@@ -189,7 +191,7 @@ h2 {
     position: absolute;
     top: 0;
     right: 8px;
-    background-color: #0e7ac1;
+    background-color: var(--firstColor);
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -205,13 +207,13 @@ h2 {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: white;
+    background-color: var(--thirdColor);
 }
 
 .countdown-content .countdown p {
     font-size: 32px;
     font-weight: 800;
-    color: #0e7ac1;
+    color: var(--firstColor);
 }
 
 .logo {
@@ -260,11 +262,10 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(76, 79, 154);
+    background-color: var(--firstColor);
     width: 600px;
     max-width: 80%;
     height: 46px;
-    /* aspect-ratio: 1/1; */
     border-radius: 10px;
     cursor: pointer;
     margin: 0 0 10px;
@@ -303,13 +304,15 @@ h2 {
 }
 
 .options-content>label:hover {
-    background-color: rgb(52, 64, 119);
+    background-color: var(--main);
     transform: translateY(-3px);
     animation: wizz 0.75s;
 }
 
 .options-content>label:has(input:checked) {
-    background-color: rgb(88, 115, 225);
+    background-color: var(--main);
+    border: var(--thirdColor) 3px solid;
+    /* border-color: var(--firstColor); */
     transition: none;
 }
 
@@ -329,7 +332,7 @@ button {
 }
 
 button:disabled {
-    opacity: .5;
+    opacity: .3;
 }
 
 #start,
@@ -338,11 +341,12 @@ button:disabled {
     border-radius: 10px;
     font-size: 1.5rem;
     border: none;
-    background-color: #445067;
-    color: #ddd6f3;
+    background-color: var(--thirdColor);
+    color: var(--main);
     padding: 5px 0;
     width: 90%;
     max-width: 200px;
+    transition: .3s ease-in-out;
 }
 
 /*////////////////// eo: QUIZ ////////////////*/
@@ -357,7 +361,7 @@ button:disabled {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: hsl(208, 92%, 41%);
+    background-color: var(--main);
     border-radius: 10px;
 }
 
@@ -400,26 +404,35 @@ button:disabled {
     border-radius: 10px;
     padding: 10px 8px;
     transform: translate(-50%, -50%);
-    background-color: rgb(13, 24, 100);
+    background-color: var(--main);
 }
 
 .modal-check h2 {
-    font-size: 3.8rem;
-    line-height: 2rem;
+    font-size: 3rem;
+    line-height: 1rem;
     margin: 20px 0 0;
 }
 
 .modal-check h2 span {
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.2rem;
 }
 
 .modal-check p {
-    font-size: 1.3rem;
+    font-size: 1rem;
 
     @media screen and (min-width: 768px) {
         max-width: 80%;
     }
+}
+.know-more-gif {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.modal-check  img {
+    height: 150px;
+    max-width: 80%;
 }
 
 /*////////////////// eo: MODAL ////////////////*/
@@ -435,13 +448,13 @@ button:disabled {
 .progress-bar {
     height: 15px;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.329);
+    background-color: var(--thirdColor);
 }
 
 .progress-value {
     width: 100%;
     height: 100%;
-    background-color: rgb(54, 51, 104);
+    background-color: var(--firstColor);
     transform: scaleX(0);
     transform-origin: left;
     transition: .3s ease-in-out;
@@ -451,24 +464,27 @@ button:disabled {
 
 /*////////////////// SCORE BOARD ////////////////*/
 th , td {
-    border-bottom: 2px solid hsl(245, 38%, 18%);
+    border-bottom: 2px solid var(--main);
     text-align: center;
     width: 20px;
     padding: 0 5px;
     font-size: 1.5em;
-    color: hsl(14, 58%, 55%);
+    color: var(--thirdColor);
 }
-td {
-    color: hsl(14, 58%, 55%);
-}
+
 tr:last-child th,
 tr:last-child td {
   border-bottom: none; 
 }
+.head th {
+    padding-bottom: 20px;
+    font-size: 2em;
+    font-weight: 500;
+}
 
 .head th:last-child {
     width: 200px;
-    text-align: left;
+    /* text-align: left; */
 }
 /*////////////////// eo: SCORE BOARD ////////////////*/
 
