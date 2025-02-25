@@ -19,8 +19,11 @@ export const displayResult = (gNumber) => {
     console.log(player)
     if (score < turn / 2) {
         resultComment.innerText = "nul(lllll) !!!";
+    } else if (score <= (turn * 3 / 4)){
+        resultComment.innerText = "OK tier";
     } else {
         resultComment.innerText = "Champion !";
+
     }
     progressValue.style.transform = `scaleX(1)`;
 }
