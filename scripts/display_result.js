@@ -1,5 +1,5 @@
 import { turn } from "./game.js";
-import { score, updateScore } from "./update_score.js";
+import { score } from "./update_score.js";
 
 
 const quizContent = document.querySelector(".quiz");
