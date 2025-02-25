@@ -22,7 +22,6 @@
     --secondColor:#6A9AB0;
     --thirdColor:#EAD8B1;
     --fourthColor:#995D81;
-    --fifthColor:qsd;
 }
 body {
     background: -webkit-linear-gradient(to right, #ddd6f3, #faaca8);

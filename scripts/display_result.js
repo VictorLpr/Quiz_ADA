@@ -19,10 +19,12 @@ export const displayResult = (gNumber) => {
     console.log(player)
     if (score < turn / 2) {
         resultComment.innerText = "nul(lllll) !!!";
+        document.querySelector("#lose-audio").play();
     } else if (score <= (turn * 3 / 4)){
         resultComment.innerText = "OK tier";
     } else {
         resultComment.innerText = "Champion !";
+        document.querySelector("#win-audio").play();
 
     }
     progressValue.style.transform = `scaleX(1)`;
