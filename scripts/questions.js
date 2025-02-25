@@ -358,14 +358,6 @@ export const quiz = {
                 correct_answer: "Expecto patronum",
                 know_more: "Expecto patronum est un sort permettant de faire apparaître un Patronus. Avada Kedavra provoque la mort instantanée, Endoloris inflige une douleur atroce et Impero permet de prendre le contrôle du corps de la cible.",
                 difficulty: 2
-            },
-            {
-                done: false,
-                text: "",
-                options: ["", "", "", ""],
-                correct_answer: "",
-                know_more: "",
-                difficulty: 0
             }
         ]
     },
