@@ -76,6 +76,7 @@ startButton.addEventListener("click", () => {
         console.log(player)
         localStorage.setItem(gameNumber++, JSON.stringify(player));
         pickQuestion(subjectChoices);
+        document.querySelector('#start-audio').play();
         subjectContent.style.display = "none";
         quizContent.style.display = "flex";
         scoreBoardLogo.style.display = "none";
