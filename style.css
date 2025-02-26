@@ -470,6 +470,9 @@ button:disabled {
 .score-title {
     font-size: 2rem;
     margin-bottom: 30px;
+    @media screen and (max-width: 400px) {
+        font-size: 1.5rem;
+    }
 }
 
 th , td {
@@ -494,6 +497,19 @@ tr:last-child td {
 .head th:last-child {
     width: 200px;
     /* text-align: left; */
+}
+
+.home-logo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.home-logo img {
+    height: 60px;
+    @media screen and (min-width: 768px) {
+        height: 150px;
+    }
+
 }
 /*////////////////// eo: SCORE BOARD ////////////////*/
 
@@ -557,4 +573,9 @@ tr:last-child td {
 .themes img {
     width: 40px;
     height: 40px;
+    @media screen and (max-width: 400px) {
+        height: 30px; 
+        width: 30px;
+        
+    }
 }
