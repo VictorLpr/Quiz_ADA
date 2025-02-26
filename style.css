@@ -68,7 +68,7 @@ h2 {
 
 /*////////////////// MAIN ////////////////*/
 .edwige {
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -424,7 +424,7 @@ button:disabled {
 .modal-check p {
     font-size: 1rem;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 768px) and (min-height: 600px) {
         max-width: 80%;
         font-size: 1.8rem;
     }
