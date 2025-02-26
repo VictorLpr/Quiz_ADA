@@ -8,12 +8,14 @@ const logo = document.querySelector(".logo img");
 const validButton = document.querySelector("#valid-button");
 export let timeOut = () => {};
 
-// Lancée dans game
+// Affiche une question
 export const displayQuestion = (pQuiz, pQuestion) => {
+    // Vide l'HTML
     optionsContent.innerHTML = "";
     currentQuestion.innerHTML = "";
     updateProgress();
     startCountdown();
+    // Affiche le logo, la question et les réponsee possibles
     logo.src = pQuiz.url_logo;
     currentQuestion.innerText = pQuestion.text;
     pQuestion.options.forEach((option, i) => {
@@ -23,13 +25,16 @@ export const displayQuestion = (pQuiz, pQuestion) => {
                         <p>${option}</p>
                     </label>`)
     })
+    // Permet l'animation de l'apparition des réponses
     setTimeout(() => {
         const labels = document.querySelectorAll("label")
         labels.forEach(label => {
             label.classList.add("load")
         })
     },200)
+    // Lance un délai de 15sec pour répondre à la question 
     timeOut = setTimeout(noAnswer, 15000);
+    // Déverrouille le bouton valider une fois une option sélectionnée
     document.querySelectorAll(".options").forEach((option) => {
         option.addEventListener("change", () => {
             validButton.disabled = false;

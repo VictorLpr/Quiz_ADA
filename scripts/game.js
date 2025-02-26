@@ -23,9 +23,12 @@ const themeButtons = document.querySelectorAll('.subject-list button');
 const subjectContent = document.querySelector(".subject");
 const startButton = document.querySelector("#start");
 let gameNumber = 1;
+
+// Vérifie si des parties ont déjà été stockées dans le local storage au refresh de la page
 if (localStorage.getItem("gameNumber") > 1) {
     gameNumber = parseInt(localStorage.getItem("gameNumber")) + 1
 }
+
 // 3 gros soucis :
 
 // pickedQuestion => je l'ai créé dans le fichier qui la met à jour et après dans les autres,
@@ -63,7 +66,7 @@ startButton.addEventListener("click", () => {
     if (playerName.value == "") {
         playerName.focus();
     } else {
-        // choisit la premier question
+        // Crée un local storage avec le player name les logos des quiz choisi
         subjectChoices.forEach((choice) => {
             logoChoices.push(quiz[choice].url_logo)
         })
