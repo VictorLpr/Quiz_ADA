@@ -8,9 +8,8 @@ export const selectTheme = (btn, choice) => {
         btn.setAttribute('selected', '');
         startButton.disabled = false;
         choice.push(btn.dataset.value);
-        console.log('et les sélectionnés sont : ' + choice)
     } else {
-        // si il est déjà encore sélectionné, on le désélectionne
+        // si il est déjà sélectionné, on le désélectionne
         // Suppression de l'attribut selected sur le bouton
         // Suppression au tableau des thèmes sélectionnés
         btn.removeAttribute('selected');
@@ -18,7 +17,6 @@ export const selectTheme = (btn, choice) => {
         if (choice.length == 0) {
             startButton.disabled = true;
         }
-        console.log('et les sélectionnés sont : ' + choice)
     }
     return choice;
 }

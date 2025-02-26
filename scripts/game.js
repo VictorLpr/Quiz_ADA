@@ -66,7 +66,7 @@ startButton.addEventListener("click", () => {
     if (playerName.value == "") {
         playerName.focus();
     } else {
-        // Crée un local storage avec le player name les logos des quiz choisi
+        // Crée un local storage avec le player name les logos des quiz choisis
         subjectChoices.forEach((choice) => {
             logoChoices.push(quiz[choice].url_logo)
         })
@@ -76,27 +76,24 @@ startButton.addEventListener("click", () => {
             id: new Date(),
             theme: logoChoices
         }
-        console.log(player)
         localStorage.setItem(gameNumber++, JSON.stringify(player));
         pickQuestion(subjectChoices);
         document.querySelector('#start-audio').play();
         subjectContent.style.display = "none";
         quizContent.style.display = "flex";
         scoreBoardLogo.style.display = "none";
-
         updateScore(0);
-        console.log(updateScore(0))
         displayQuestion(pickedQuiz, pickedQuestion);
     }
 })
 
-
+// Valide l'option sélectionnée
 validButton.addEventListener("click", () => {
-    clearInterval(timeOut);
+    clearInterval(timeOut); // stop le délai de réponse
     displayKnowmore(pickedQuiz);
 })
 
-
+// Passe à la question suivante ou affiche le résultat du quiz
 nextButton.addEventListener("click", () => {
     modal.style.display = "none";
     if (questionCount === 1) {
@@ -109,20 +106,16 @@ nextButton.addEventListener("click", () => {
     displayQuestion(pickedQuiz, pickedQuestion);
 })
 
-
+// Retour à l'écran choix de thèmes et reset tout
 resetButton.addEventListener('click', () => {
-    console.log("yo" + subjectChoices);
     questionCount = turn;
     updateScore(0);
     updateProgress();
     subjectChoices = [];
     logoChoices = [];
-    console.log("yoyo" + subjectChoices);
-
     themeButtons.forEach((button) => {
         button.removeAttribute('selected');
     })
     subjectContent.style.display = "block";
     result.style.display = "none";
-    console.log(subjectChoices)
 })
