@@ -20,14 +20,15 @@ export const displayKnowmore = (pQuiz) => {
     }
     modal.style.display = "flex";
     // Vérifie la réponse et affiche un gif et un message selon si vrai ou faux et met à jour le score
+        console.log(pQuiz)
     if (checkAnswer(answerGiven) == true) {
         document.querySelector(".modal-check h2").innerText = "Bravo";
-        gif.src = Object.entries(pQuiz)[2][1];
+        gif.src = pQuiz.gif_true
         scoring++;
         updateScore(scoring);
     } else {
         document.querySelector(".modal-check h2").innerHTML = `Nul(l) </br></br> <span> la réponse était : ${pickedQuestion.correct_answer}</span>`;
-        gif.src = Object.entries(pQuiz)[3][1];
+        gif.src = pQuiz.gif_false
     }
     // Affiche le Know More
     document.querySelector(".modal-check p").innerText = pickedQuestion.know_more;

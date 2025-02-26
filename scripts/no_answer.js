@@ -11,7 +11,7 @@ export const noAnswer = () => {
     validButton.disabled = true;
     modal.style.display = "flex";
     document.querySelector(".modal-check h2").innerHTML = `Trop tard...</br></br> <span> la réponse était : ${pickedQuestion.correct_answer}</span>`;
-    gif.src = Object.entries(pickedQuiz)[3][1];
+    gif.src = pickedQuiz.gif_false;
     document.querySelector(".modal-check p").innerText = pickedQuestion.know_more;
     stopInterval();
     updateSecondes(14);

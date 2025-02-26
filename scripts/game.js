@@ -58,7 +58,7 @@ if (localStorage.getItem("gameNumber") > 1) {
 
 // Début du jeu
 // Choix du thème parmis des thèmes proposés
-themeChoice(themeButtons, subjectChoices);
+themeChoice(themeButtons);
 
 
 // Lance le jeu en cliquant sur c'est parti
