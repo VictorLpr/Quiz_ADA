@@ -1,7 +1,6 @@
 import { checkAnswer } from "./check_answer.js";
 import { stopInterval } from "./stop_interval.js";
 import {pickedQuestion} from "./pick_question.js";
-import {secondes} from "./update_seconds.js";
 import {score, updateScore} from "./update_score.js";
 
 let scoring = score;
@@ -20,7 +19,7 @@ export const displayKnowmore = (pQuiz) => {
     }
     modal.style.display = "flex";
     // Vérifie la réponse et affiche un gif et un message selon si vrai ou faux et met à jour le score
-        console.log(pQuiz)
+
     if (checkAnswer(answerGiven) == true) {
         document.querySelector(".modal-check h2").innerText = "Bravo";
         gif.src = pQuiz.gif_true
@@ -33,5 +32,5 @@ export const displayKnowmore = (pQuiz) => {
     // Affiche le Know More
     document.querySelector(".modal-check p").innerText = pickedQuestion.know_more;
     validButton.disabled = true;
-    stopInterval(secondes);
+    stopInterval();
 }

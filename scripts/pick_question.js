@@ -8,7 +8,6 @@ export const pickQuestion = (choice) => {
     const questionIndex = Math.floor(Math.random() * quiz[choice[quizIndex]].questions.length);
     pickedQuestion = quiz[choice[quizIndex]].questions[questionIndex];
     pickedQuiz = quiz[choice[quizIndex]];
-    console.log(pickedQuestion);
     if (pickedQuestion.done == true) {
         pickQuestion(choice);
     } else {

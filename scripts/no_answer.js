@@ -14,5 +14,4 @@ export const noAnswer = () => {
     gif.src = pickedQuiz.gif_false;
     document.querySelector(".modal-check p").innerText = pickedQuestion.know_more;
     stopInterval();
-    updateSecondes(14);
 }

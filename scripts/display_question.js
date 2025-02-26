@@ -14,7 +14,7 @@ export const displayQuestion = (pQuiz, pQuestion) => {
     optionsContent.innerHTML = "";
     currentQuestion.innerHTML = "";
     updateProgress();
-    startCountdown();
+
     // Affiche le logo, la question et les réponsee possibles
     logo.src = pQuiz.url_logo;
     currentQuestion.innerText = pQuestion.text;
@@ -31,7 +31,8 @@ export const displayQuestion = (pQuiz, pQuestion) => {
         labels.forEach(label => {
             label.classList.add("load")
         })
-    },200)
+    },200) 
+    startCountdown();
     // Lance un délai de 15sec pour répondre à la question 
     timeOut = setTimeout(noAnswer, 15000);
     // Déverrouille le bouton valider une fois une option sélectionnée
