@@ -25,7 +25,7 @@ const startButton = document.querySelector("#start");
 let gameNumber = 1;
 
 // Vérifie si des parties ont déjà été stockées dans le local storage au refresh de la page
-if (localStorage.getItem("gameNumber") > 1) {
+if (localStorage.getItem("gameNumber")) {
     gameNumber = parseInt(localStorage.getItem("gameNumber")) + 1
 }
 
